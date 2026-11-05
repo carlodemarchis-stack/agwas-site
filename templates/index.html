@@ -116,6 +116,17 @@
   <section class="sec" id="follow">
     <div class="shead"><h2>Follow me</h2><a href="{{ links.linkedin }}">Message me on LinkedIn ↗</a></div>
     <p class="stagelead">{{ content.follow_lead }}</p>
+    {% if posts %}
+    <div class="latest">
+      <h3 class="subhead">Latest from the newsletter</h3>
+      <ul class="next posts">
+        {% for p in posts %}
+        <li><span class="d"><time datetime="{{ p.iso }}">{{ p.date }}</time></span><span class="r">{% if p.episode %}Episode{% elif p.paid %}Premium{% else %}Article{% endif %}</span><span class="t"><a href="{{ p.url }}"><b>{{ p.title }}</b></a></span></li>
+        {% endfor %}
+      </ul>
+      <p class="more"><a href="{{ links.substack }}">All articles on Substack ↗</a></p>
+    </div>
+    {% endif %}
     <div class="channels">
       {% for c in content.channels %}
       <a class="ch" href="{{ links[c.href] }}"><span class="k">{{ icon(c.icon) }}{{ c.k }}</span><span class="num{% if c.handle %} handle{% endif %}">{{ c.n }}{% if c.unit %}<small>{{ c.unit }}</small>{% endif %}</span><h3>{{ c.title }}</h3><p>{{ c.text }}</p></a>

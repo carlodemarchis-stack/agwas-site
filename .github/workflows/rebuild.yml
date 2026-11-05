@@ -1,0 +1,29 @@
+name: Nightly rebuild
+# Re-renders the site so the newsletter list and the release count stay fresh without a push.
+on:
+  schedule:
+    - cron: "20 4 * * *"      # 04:20 UTC, after the sport apps' nightly runs
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: rebuild
+  cancel-in-progress: false
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install jinja2 pillow
+      - run: python3 build.py --no-images
+      - name: Commit if the rendered pages changed
+        run: |
+          git config user.name "agwas-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs
+          if git diff --cached --quiet; then echo "nothing new"; exit 0; fi
+          git commit -m "nightly: refresh newsletter list and release count"
+          git push

@@ -33,5 +33,7 @@
     "retention_zone_episodes": 83,
     "stages_12_months": 8,
     "online_formats": 5
-  }
+  },
+  "releases_url": "https://dataviz.aguywithascarf.com/releases.json",
+  "substack_archive": "https://aguywithascarf.substack.com/api/v1/archive?sort=new&limit=12"
 }

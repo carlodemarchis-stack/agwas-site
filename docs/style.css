@@ -197,6 +197,15 @@ img{display:block;max-width:100%;height:auto}
 .next .t span{color:var(--mute)}
 @media (max-width:760px){.next li{grid-template-columns:1fr 1fr}.next .t{grid-column:1/-1}}
 
+/* latest from the newsletter */
+.latest{margin:0 0 clamp(28px,4vh,44px)}
+.latest .subhead{margin-bottom:12px}
+.posts li{grid-template-columns:110px 80px minmax(0,1fr)}
+.posts .r{font-weight:400;color:var(--faint);font-size:13px}
+.latest .more{margin:12px 0 0;font-size:14px}
+.latest .more a{border-bottom:1px solid var(--ink)}
+@media (max-width:760px){.posts li{grid-template-columns:100px 1fr}.posts .t{grid-column:1/-1}}
+
 /* why the scarf */
 .scarf{margin-top:30px;padding-top:22px;border-top:1px solid #2a2a2a;max-width:60ch}
 .scarf h3{margin:0 0 8px;font-size:13px;font-weight:400;color:var(--dark-mute);text-transform:uppercase;letter-spacing:.06em}

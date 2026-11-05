@@ -14,6 +14,7 @@ import json
 import os
 import shutil
 import sys
+import urllib.request
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup
@@ -33,9 +34,16 @@ CONTENT = json.load(open(os.path.join(ROOT, "content.json")))
 
 
 # ---------------------------------------------------------------- releases (from the hub)
+def fetch_json(url, timeout=30):
+    req = urllib.request.Request(url, headers={"User-Agent": "agwas-site build"})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return json.load(r)
+
+
 def releases():
+    """The hub's release log: the sibling folder on the Mac, else the live file (the nightly Action)."""
     path = os.path.abspath(os.path.join(ROOT, SITE["releases_json"]))
-    d = json.load(open(path))
+    d = json.load(open(path)) if os.path.exists(path) else fetch_json(SITE["releases_url"])
     apps, total, first = {}, 0, None
     for a in d["apps"]:
         total += len(a["releases"])
@@ -46,6 +54,27 @@ def releases():
         apps[a["id"]] = {"version": latest["version"], "date": latest["date"], "n": len(a["releases"]), "name": a["name"]}
     return {"apps": apps, "total": total, "count": len(d["apps"]),
             "since": first.strftime("%-d %B %Y"), "updated": d.get("updated", "")}
+
+
+# ---------------------------------------------------------------- latest from Substack
+def latest_posts(n=5):
+    """The newest posts of the newsletter from Substack's public archive endpoint; [] if unreachable."""
+    try:
+        posts = fetch_json(SITE["substack_archive"])
+    except Exception as e:  # the site must still build offline
+        print("substack: skipped,", e)
+        return []
+    out = []
+    for p in posts:
+        if p.get("type") not in ("newsletter", "podcast"):
+            continue
+        dt = datetime.datetime.strptime(p["post_date"][:10], "%Y-%m-%d").date()
+        out.append({"title": p["title"].strip(), "url": p["canonical_url"], "date": dt.strftime("%-d %b %Y"),
+                    "iso": dt.isoformat(), "paid": p.get("audience") == "only_paid",
+                    "episode": p["title"].strip().startswith("Ep.")})
+        if len(out) == n:
+            break
+    return out
 
 
 # ---------------------------------------------------------------- images
@@ -123,7 +152,7 @@ def main():
     env = Environment(loader=FileSystemLoader(os.path.join(ROOT, "templates")),
                       autoescape=select_autoescape(["html"]), trim_blocks=True, lstrip_blocks=True)
     env.globals.update(pic=pic, site=SITE, content=CONTENT, links=SITE["links"], numbers=SITE["numbers"],
-                       base=SITE["base_url"], rel=releases(), year=datetime.date.today().year,
+                       base=SITE["base_url"], rel=releases(), posts=latest_posts(), year=datetime.date.today().year,
                        built=datetime.date.today().isoformat())
     env.filters["safe_html"] = lambda s: Markup(s)
     WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve"]
