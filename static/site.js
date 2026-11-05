@@ -48,3 +48,10 @@
   document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
   paint(); start();
 })();
+
+/* a link to something inside a closed fold opens the fold first */
+document.addEventListener('click', function (e) {
+  var a = e.target.closest('a[href^="#"]'); if (!a) return;
+  var el = document.getElementById(a.getAttribute('href').slice(1)); if (!el) return;
+  var d = el.closest('details'); if (d && !d.open) d.open = true;
+});

@@ -22,80 +22,90 @@
   </div>
 </div>
 
+{# ---------- 1. About: one block, text left, portrait right ---------- #}
 <section class="feature" id="about">
   <div class="wrap">
-    <h2>{{ content.feature.title }}</h2>
-    <p>{{ content.feature.text|safe_html }}</p>
-    <div class="strip">
-      {% for t in content.strip %}
-      <a href="{{ t.href }}">{{ pic(t.img, alt="", sizes="(max-width:860px) 50vw, 25vw", pos=t.pos) }}<h3>{{ t.title }}</h3><p>{{ t.text }}</p></a>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<div class="wrap">
-  <section class="sec first" id="stage">
-    <div class="shead"><h2>On stage and on air</h2><a href="/stage/">The full record ↗</a></div>
-    <div class="stagerow">
-      {% for p in content.stage_photos %}
-      <figure><a href="/stage/">{{ pic(p.img, alt=p.caption, sizes="(max-width:700px) 68vw, 33vw") }}</a><figcaption>{{ p.caption }}</figcaption></figure>
-      {% endfor %}
-    </div>
-    <p class="stagelead">{{ content.stage_lead }} <a href="{{ links.linkedin }}">Book a moderator ↗</a></p>
-    <details class="fold">
-      <summary><span>The record, 2025 to 2026</span><i></i></summary>
-      {% include "_record.html" %}
-    </details>
-  </section>
-
-  <section class="sec first" id="work">
-    <div class="shead"><h2>Live sport experiences</h2><a href="{{ links.dataviz }}">dataviz.aguywithascarf.com ↗</a></div>
-    <div class="stagerow work4">
-      {% for w in work_strip %}
-      <a class="tile" href="{{ w.href }}">{{ pic(w.img, alt=w.name, sizes="(max-width:700px) 68vw, 25vw") }}<figcaption><b>{{ w.name }}</b> {{ w.short }}</figcaption></a>
-      {% endfor %}
-    </div>
-    <p class="stagelead">{{ (rel.count|words)|capitalize }} live experiences built from official feeds and updated every night: {{ rel.total }} releases since {{ rel.since }}, every one dated and noted. Best in landscape on a laptop or an iPad, fine on a phone. <a href="{{ links.dataviz }}">Open the hub ↗</a></p>
-    <details class="fold">
-      <summary><span>All {{ rel.count|words }}, and the research hub</span><i></i></summary>
-      <div class="grid compact">
-        {% for w in content.work %}
-        <a class="work" href="{{ w.href }}">{{ pic(w.img, alt=w.name, sizes="(max-width:700px) 50vw, 25vw") }}<h3>{{ w.name }}{% if w.id in rel.apps %} <small>v{{ rel.apps[w.id].version }}</small>{% endif %}</h3><p>{{ w.text }}</p></a>
-        {% endfor %}
-      </div>
-    </details>
-  </section>
-
-  <section class="sec" id="services">
-    <div class="shead"><h2>Services</h2><a href="{{ links.linkedin }}">Start on LinkedIn ↗</a></div>
-    <ol class="services">
-      {% for s in content.services %}
-      <li><span class="i">{{ "%02d"|format(loop.index) }}</span><h3>{{ s.name }}</h3><p>{{ s.text|safe_html }}</p></li>
-      {% endfor %}
-    </ol>
-    <div class="avail">{% for a in content.availability %}<span>{{ a }}</span>{% endfor %}</div>
-  </section>
-
-  <section class="sec" id="bio">
-    <div class="shead"><h2>About</h2><a href="{{ links.linkedin }}">LinkedIn ↗</a></div>
-    <div class="about">
+    <div class="aboutgrid">
       <div>
-        <p class="big">{{ content.about.big }}</p>
+        <h2>{{ content.feature.title }}</h2>
+        <p>{{ content.feature.text|safe_html }}</p>
         {% for p in content.about.paras %}<p>{{ p }}</p>{% endfor %}
         <div class="meta">
           {% for k, v in content.about.meta %}<b>{{ k }}</b><span>{{ v|safe_html }}</span>{% endfor %}
         </div>
       </div>
       <figure>
-        {{ pic("portrait", alt="Carlo De Marchis", sizes="(max-width:860px) 100vw, 45vw") }}
-        <figcaption>{{ site.person }}.</figcaption>
+        {{ pic("portrait", alt="Carlo De Marchis", sizes="(max-width:860px) 100vw, 38vw") }}
+        <figcaption>{{ site.person }}. <a href="{{ links.linkedin }}">LinkedIn ↗</a></figcaption>
       </figure>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  {# ---------- 2. Services ---------- #}
+  <section class="sec first" id="services">
+    <div class="shead"><h2>Services</h2><a href="{{ links.linkedin }}">Start on LinkedIn ↗</a></div>
+    <nav class="subnav" aria-label="Services">
+      {% for s in content.services %}<a href="#s{{ loop.index }}">{{ s.name }}</a>{% endfor %}
+    </nav>
+    <div class="strip">
+      {% for t in content.strip %}
+      <a href="{{ t.href }}">{{ pic(t.img, alt="", sizes="(max-width:860px) 50vw, 25vw", pos=t.pos) }}<h3>{{ t.title }}</h3><p>{{ t.text }}</p></a>
+      {% endfor %}
+    </div>
+    <ol class="services">
+      {% for s in content.services %}
+      <li id="s{{ loop.index }}"><span class="i">{{ "%02d"|format(loop.index) }}</span><h3>{{ s.name }}</h3><p>{{ s.text|safe_html }}</p></li>
+      {% endfor %}
+    </ol>
+    <div class="avail">{% for a in content.availability %}<span>{{ a }}</span>{% endfor %}</div>
+  </section>
+
+  {# ---------- 3. Work: on stage, then the live sport experiences ---------- #}
+  <section class="sec" id="work">
+    <div class="shead"><h2>Work</h2><a href="/stage/">The stage record ↗</a></div>
+    <nav class="subnav" aria-label="Work">
+      <a href="#stage">On stage and on air</a><a href="#dataviz">Live sport experiences</a><a href="{{ links.research }}">Research hub ↗</a><a href="{{ links.ytft }}">YouTube Football Tracker ↗</a>
+    </nav>
+
+    <div class="sub" id="stage">
+      <h3 class="subhead">On stage and on air</h3>
+      <div class="stagerow">
+        {% for p in content.stage_photos %}
+        <figure><a href="/stage/">{{ pic(p.img, alt=p.caption, sizes="(max-width:700px) 68vw, 33vw") }}</a><figcaption>{{ p.caption }}</figcaption></figure>
+        {% endfor %}
+      </div>
+      <p class="stagelead">{{ content.stage_lead }} <a href="/stage/">The full record ↗</a></p>
+      <details class="fold">
+        <summary><span>The record, 2025 to 2026</span><i></i></summary>
+        {% include "_record.html" %}
+      </details>
+    </div>
+
+    <div class="sub" id="dataviz">
+      <h3 class="subhead">Live sport experiences</h3>
+      <div class="stagerow work4">
+        {% for w in work_strip %}
+        <a class="tile" href="{{ w.href }}">{{ pic(w.img, alt=w.name, sizes="(max-width:700px) 68vw, 25vw") }}<figcaption><b>{{ w.name }}</b> {{ w.short }}</figcaption></a>
+        {% endfor %}
+      </div>
+      <p class="stagelead">{{ (rel.count|words)|capitalize }} live experiences built from official feeds and updated every night: {{ rel.total }} releases since {{ rel.since }}, every one dated and noted. Best in landscape on a laptop or an iPad, fine on a phone. <a href="{{ links.dataviz }}">Open the hub ↗</a></p>
+      <details class="fold">
+        <summary><span>All {{ rel.count|words }}, and the research hub</span><i></i></summary>
+        <div class="grid">
+          {% for w in content.work %}
+          <a class="work" href="{{ w.href }}">{{ pic(w.img, alt=w.name, sizes="(max-width:700px) 50vw, 25vw") }}<h3>{{ w.name }}{% if w.id in rel.apps %} <small>v{{ rel.apps[w.id].version }}</small>{% endif %}</h3><p>{{ w.text }}</p></a>
+          {% endfor %}
+        </div>
+      </details>
     </div>
   </section>
 
-  <section class="sec" id="channels">
-    <div class="shead"><h2>Every channel, every platform</h2><a href="{{ links.substack }}">Subscribe ↗</a></div>
+  {# ---------- 4. Follow me, contact included ---------- #}
+  <section class="sec" id="follow">
+    <div class="shead"><h2>Follow me</h2><a href="{{ links.linkedin }}">Message me on LinkedIn ↗</a></div>
+    <p class="stagelead">Every channel, every platform. To get in touch, LinkedIn is the door: a message there reaches me the same day.</p>
     <div class="channels">
       {% for c in content.channels %}
       <a class="ch" href="{{ links[c.href] }}"><span class="k">{{ c.k }}</span><span class="num">{{ c.n }}<small>{{ c.unit }}</small></span><h3>{{ c.title }}</h3><p>{{ c.text }}</p></a>

@@ -33,11 +33,9 @@
     <a class="brand" href="/">A Guy With A Scarf <span>· {{ site.person }}</span></a>
     <ul>
       <li><a href="/#about">About</a></li>
-      <li><a href="/stage/" {% if page == 'stage' %}aria-current="page"{% endif %}>On stage</a></li>
-      <li><a href="/#work">Work</a></li>
       <li><a href="/#services">Services</a></li>
-      <li><a href="/#channels">Writing</a></li>
-      <li><a href="{{ links.linkedin }}">Contact</a></li>
+      <li><a href="/#work" {% if page == 'stage' %}aria-current="page"{% endif %}>Work</a></li>
+      <li><a href="/#follow">Follow me</a></li>
     </ul>
   </nav>
 </div>
