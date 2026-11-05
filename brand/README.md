@@ -8,7 +8,9 @@ colours stay (they are what the photo and the existing favicons share) but they 
 
 Recommended direction (Carlo's idea, 2026-11-05): **the dissolve**. Four horizontal bars in the scarf
 colours (sand, turquoise, cobalt, red), solid at the left, breaking into particles toward the right: the
-broadcast becoming data. No letter, no pictogram. Name "A Guy With A Scarf", Helvetica Neue 500.
+broadcast becoming data. In Carlo's words: "the solid present and the uncertain future, the edge where I have
+always worked: what we know on the left, what is still forming on the right." No letter, no pictogram.
+Name "A Guy With A Scarf", Helvetica Neue 500.
 Dropped on the way: sash (first pass), rounded G (too close to Google), typographic G, bracket / tactics /
 lanes / formation pictograms (clip art). All kept under `alt/`.
 
