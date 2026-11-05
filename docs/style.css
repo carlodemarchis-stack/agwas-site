@@ -219,11 +219,11 @@ footer{margin-top:clamp(64px,10vh,120px);border-top:1px solid var(--ink);padding
 .brandpage .light{background:var(--paper);border:1px solid var(--line);color:var(--ink)}
 .brandpage .dark{background:var(--dark);color:var(--dark-ink)}
 .markshow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.versions{list-style:none;margin:clamp(24px,4vh,40px) 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:28px 24px}
+.versions{list-style:none;margin:clamp(24px,4vh,40px) 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:28px 22px}
 .versions .vshow{display:grid;grid-template-columns:1fr 1fr;margin-bottom:12px}
 .versions .vshow span{display:flex;align-items:center;justify-content:center;padding:18px;min-height:96px}
 .versions .vshow img{width:64px;height:auto;max-width:100%}
-.versions li:nth-child(3) .vshow img{width:100%}
+.versions li:nth-child(3) .vshow img,.versions li:nth-child(4) .vshow img{width:100%}
 .versions b{display:block;font-weight:500}
 .versions p{margin:4px 0 8px;font-size:14.5px;color:var(--mute);line-height:1.5}
 .versions a{font-size:13px;color:var(--mute);font-family:ui-monospace,Menlo,monospace}

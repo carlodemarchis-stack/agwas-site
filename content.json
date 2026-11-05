@@ -477,7 +477,7 @@
     "mark_p1": "Four horizontal bars, solid at the left, breaking into particles toward the right. Read left to right it is a broadcast becoming data: a match, a feed, a season turned into the points a chart or a model works with. That is the work, sports media, digital and AI, in one gesture.",
     "mark_p2": "The four colours come from the scarf in the photo on the home page. The scarf is an accident that stuck; the mark is not about it. The bars always run left to right, always in this order from the top: sand, turquoise, cobalt, red.",
     "versions_head": "Versions",
-    "versions_p": "Three files cover every use. The tile is for browser tabs, app icons and avatars. The wide mark sits next to the name in a masthead or a credit line. The bare mark is the tile without its background, for a page that already has a dark or white ground.",
+    "versions_p": "Four files cover every use. The tile is for browser tabs, app icons and avatars. The wide mark sits next to the name in a masthead or a credit line. The bare mark is the tile without its background, for a page that already has a dark or white ground. The stacked lockup puts the mark over the name, for squares, posts and slides.",
     "versions": [
       {
         "file": "agwas-mark-tile.svg",
@@ -493,6 +493,12 @@
         "file": "agwas-mark-wide.svg",
         "name": "Wide mark",
         "use": "Next to the name at 20 to 28 px tall, or large on its own. The particles have room to dissolve."
+      },
+      {
+        "file": "agwas-lockup-stacked.svg",
+        "name": "Stacked lockup",
+        "use": "Mark over the name, name set as outlines. For a square, a post, a slide. Dark and with-person versions below.",
+        "dark": "agwas-lockup-stacked-on-dark.svg"
       },
       {
         "file": "agwas-mark.svg",
@@ -522,6 +528,10 @@
       [
         "Next to the name",
         "Mark first, then the name, on one baseline, a gap of half the mark's height."
+      ],
+      [
+        "Stacked or side by side",
+        "Side by side in mastheads and credit lines. Stacked where the space is square or the name must be large: posts, slides, the end of a video."
       ]
     ],
     "colour_head": "Colour",
@@ -584,6 +594,20 @@
     ],
     "download_head": "Download",
     "download_p": "SVG, which scales to any size. Export PNG from the SVG when a format needs it.",
-    "note": "Brand guidelines, first edition, 5 November 2026. Mark and page from the identity study of the same date."
+    "note": "Brand guidelines, first edition, 5 November 2026. Mark and page from the identity study of the same date.",
+    "extra_files": [
+      {
+        "file": "agwas-lockup-stacked-on-dark.svg",
+        "name": "Stacked lockup, on dark"
+      },
+      {
+        "file": "agwas-lockup-stacked-person.svg",
+        "name": "Stacked lockup with the person"
+      },
+      {
+        "file": "agwas-lockup-stacked-person-on-dark.svg",
+        "name": "Stacked lockup with the person, on dark"
+      }
+    ]
   }
 }
