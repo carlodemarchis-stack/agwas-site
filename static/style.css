@@ -178,6 +178,7 @@ img{display:block;max-width:100%;height:auto}
 .ch + .ch{padding-left:18px;border-left:1px solid var(--line)}
 .ch .k{font-size:12.5px;color:var(--faint);text-transform:uppercase;letter-spacing:.06em}
 .ch .num{position:absolute;right:18px;top:16px;font-size:22px;letter-spacing:-.02em;text-align:right;line-height:1.1}
+.ch .num.handle{font-size:14px;color:var(--mute);top:19px}
 .ch .num small{display:block;font-size:11px;color:var(--faint);letter-spacing:.04em;text-transform:uppercase}
 .ch h3{margin:30px 0 6px;font-size:19px;font-weight:500;letter-spacing:-.015em}
 .ch p{margin:0;font-size:14.5px;line-height:1.45;color:var(--mute)}
