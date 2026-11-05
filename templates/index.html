@@ -67,11 +67,11 @@
     <div class="avail">{% for a in content.availability %}<span>{{ a }}</span>{% endfor %}</div>
   </section>
 
-  {# ---------- 3. Work: on stage, then the live sport experiences ---------- #}
+  {# ---------- 3. Work: on stage, then the interactive sport experiences ---------- #}
   <section class="sec" id="work">
     <div class="shead"><h2>Work</h2><a href="/stage/">The stage record ↗</a></div>
     <nav class="subnav" aria-label="Work">
-      <a href="#next">Upcoming</a><a href="#stage">On stage, online and on air</a><a href="#dataviz">Live sport experiences</a><a href="{{ links.research }}">Research hub ↗</a><a href="{{ links.ytft }}">YouTube Football Tracker ↗</a>
+      <a href="#next">Upcoming</a><a href="#stage">On stage, online and on air</a><a href="#dataviz">Interactive Sport Experiences</a><a href="{{ links.research }}">Research hub ↗</a><a href="{{ links.ytft }}">YouTube Football Tracker ↗</a>
     </nav>
 
     <div class="sub" id="next">
@@ -94,7 +94,7 @@
     </div>
 
     <div class="sub" id="dataviz">
-      <h3 class="subhead">Live sport experiences</h3>
+      <h3 class="subhead">Interactive Sport Experiences</h3>
       <div class="stagerow work4">
         {% for w in work_strip %}
         <a class="tile" href="{{ w.href }}">{{ pic(w.img, alt=w.name, sizes="(max-width:700px) 68vw, 25vw") }}<figcaption><b>{{ w.name }}</b> {{ w.short }}</figcaption></a>
