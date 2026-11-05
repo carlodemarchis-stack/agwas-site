@@ -608,6 +608,31 @@
         "file": "agwas-lockup-stacked-person-on-dark.svg",
         "name": "Stacked lockup with the person, on dark"
       }
+    ],
+    "photo_head": "With the photo",
+    "photo_p1": "For a banner, the mark and the name sit on the left and the photo on the right. The photo is the hero shot from the home page, cropped so that Carlo stands at the right edge, and it fades into the ground behind the name instead of meeting it at an edge. On white the room's grey-blue disappears into the paper; on night the fade is longer.",
+    "photo_p2": "Two rules. The mark never sits on the photo itself; it stays on the plain ground to the left of the fade. And the line under the name is fixed: Carlo De Marchis · sports media, digital, AI.",
+    "photo_files": [
+      {
+        "file": "agwas-banner-page-cover-2256x382-photo.png",
+        "name": "LinkedIn page cover, white",
+        "size": "2256 × 382"
+      },
+      {
+        "file": "agwas-banner-page-cover-2256x382-photo-dark.png",
+        "name": "LinkedIn page cover, night",
+        "size": "2256 × 382"
+      },
+      {
+        "file": "agwas-banner-profile-banner-1584x396-photo.png",
+        "name": "LinkedIn profile banner, white",
+        "size": "1584 × 396"
+      },
+      {
+        "file": "agwas-banner-profile-banner-1584x396-photo-dark.png",
+        "name": "LinkedIn profile banner, night",
+        "size": "1584 × 396"
+      }
     ]
   }
 }

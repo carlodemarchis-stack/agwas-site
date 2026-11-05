@@ -262,3 +262,5 @@ footer{margin-top:clamp(64px,10vh,120px);border-top:1px solid var(--ink);padding
 .files{margin:clamp(20px,3vh,32px) 0 0;padding:0;list-style:none;display:grid;gap:10px;font-family:ui-monospace,Menlo,monospace;font-size:14px}
 .files .muted{font-family:var(--font)}
 @media (max-width:760px){.markshow,.brandpage .two,.sizes,.lockup,.donts{grid-template-columns:1fr}.lockup span{font-size:15px}}
+.banners{display:grid;gap:12px;margin-bottom:6px}
+.banners img{display:block;width:100%;height:auto;border:1px solid var(--line)}

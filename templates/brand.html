@@ -48,6 +48,21 @@
   </section>
 
   <section class="sec">
+    <div class="shead"><h2>{{ b.photo_head }}</h2></div>
+    <div class="banners">
+      <img src="/brand/agwas-banner-page-cover-2256x382-photo.png" alt="LinkedIn page cover on white: the mark and the name on the left, Carlo De Marchis on the right" loading="lazy">
+      <img src="/brand/agwas-banner-page-cover-2256x382-photo-dark.png" alt="The same cover on a night ground" loading="lazy">
+    </div>
+    <div class="two">
+      <p>{{ b.photo_p1 }}</p>
+      <p>{{ b.photo_p2 }}</p>
+    </div>
+    <ul class="files">
+      {% for f in b.photo_files %}<li><a class="u" href="/brand/{{ f.file }}" download>{{ f.file }}</a> <span class="muted">{{ f.name }} · {{ f.size }}</span></li>{% endfor %}
+    </ul>
+  </section>
+
+  <section class="sec">
     <div class="shead"><h2>{{ b.colour_head }}</h2></div>
     <p class="lead">{{ b.colour_p }}</p>
     <ul class="swatches">
