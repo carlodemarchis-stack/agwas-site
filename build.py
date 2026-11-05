@@ -35,7 +35,7 @@ CONTENT = json.load(open(os.path.join(ROOT, "content.json")))
 
 # ---------------------------------------------------------------- releases (from the hub)
 def fetch_json(url, timeout=30):
-    req = urllib.request.Request(url, headers={"User-Agent": "agwas-site build"})
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36", "Accept": "application/json"})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return json.load(r)
 
@@ -57,13 +57,19 @@ def releases():
 
 
 # ---------------------------------------------------------------- latest from Substack
+POSTS_CACHE = os.path.join(ROOT, "data", "posts.json")
+
+
 def latest_posts(n=5):
-    """The newest posts of the newsletter from Substack's public archive endpoint; [] if unreachable."""
+    """The newest posts of the newsletter from Substack's public archive endpoint.
+    Substack refuses GitHub's runners (403), so a successful fetch is cached in data/posts.json and
+    the cache is served whenever the endpoint is unreachable: the list can go stale, never blank."""
+    cached = json.load(open(POSTS_CACHE)) if os.path.exists(POSTS_CACHE) else []
     try:
         posts = fetch_json(SITE["substack_archive"])
-    except Exception as e:  # the site must still build offline
-        print("substack: skipped,", e)
-        return []
+    except Exception as e:  # the site must still build offline and in CI
+        print(f"substack: skipped ({e}), serving {len(cached)} cached posts")
+        return cached
     out = []
     for p in posts:
         if p.get("type") not in ("newsletter", "podcast"):
@@ -74,7 +80,10 @@ def latest_posts(n=5):
                     "episode": p["title"].strip().startswith("Ep.")})
         if len(out) == n:
             break
-    return out
+    if out:
+        os.makedirs(os.path.dirname(POSTS_CACHE), exist_ok=True)
+        json.dump(out, open(POSTS_CACHE, "w"), indent=1, ensure_ascii=False)
+    return out or cached
 
 
 # ---------------------------------------------------------------- images

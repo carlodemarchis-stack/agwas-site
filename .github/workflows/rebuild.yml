@@ -19,6 +19,8 @@ jobs:
           python-version: "3.12"
       - run: pip install jinja2 pillow
       - run: python3 build.py --no-images
+      - name: Refuse to publish a page without the newsletter list
+        run: grep -q 'class="next posts"' docs/index.html
       - name: Commit if the rendered pages changed
         run: |
           git config user.name "agwas-bot"
