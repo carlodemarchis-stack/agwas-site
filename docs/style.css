@@ -91,6 +91,8 @@ img{display:block;max-width:100%;height:auto}
 .shead{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding-bottom:18px;border-bottom:1px solid var(--ink);margin-bottom:clamp(24px,4vh,40px)}
 .shead h2{margin:0;font-weight:400;font-size:clamp(26px,3.2vw,44px);letter-spacing:-.025em;line-height:1.05}
 .shead a{font-size:15px;color:var(--mute);white-space:nowrap}
+/* the mark before every chapter title on the home and stage pages (the brand page keeps its own heads) */
+.page-home .shead h2::before,.page-stage .shead h2::before,.page-home .feature h2::before{content:"";display:inline-block;width:.74em;height:.74em;margin-right:.3em;background:url(/brand/agwas-mark.svg) center/contain no-repeat;vertical-align:-.04em}
 .shead a:hover{color:var(--ink)}
 .lead{margin:0;max-width:70ch;font-size:clamp(17px,1.5vw,21px);line-height:1.45;letter-spacing:-.01em}
 .page-head .lead{margin-bottom:clamp(28px,4vh,44px)}
