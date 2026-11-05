@@ -20,7 +20,7 @@ img{display:block;max-width:100%;height:auto}
 .nav .brand span{color:var(--mute);font-weight:400}
 .nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
 .nav a:hover,.nav a[aria-current]{color:var(--mute)}
-@media (max-width:700px){.nav{padding:16px 0}.nav .brand{white-space:nowrap;font-size:15px}.nav ul{gap:12px;font-size:14px}.nav .brand span,.nav li:nth-child(3),.nav li:nth-child(4){display:none}}
+@media (max-width:700px){.nav{padding:16px 0}.nav .brand{white-space:nowrap;font-size:15px}.nav ul{gap:12px;font-size:14px}.nav .brand span,.nav li:nth-child(2),.nav li:nth-child(4){display:none}}
 
 /* hero: full-bleed photo; on landscape each line of text carries its own black bar */
 .herobg{position:relative;min-height:min(90vh,860px);display:flex;align-items:flex-end;background:#dfe6ee;overflow:hidden}
