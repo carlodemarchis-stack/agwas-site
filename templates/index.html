@@ -114,8 +114,8 @@
 
   {# ---------- 4. Follow me, contact included ---------- #}
   <section class="sec" id="follow">
-    <div class="shead"><h2>Follow me</h2><a href="{{ links.booking }}">Book thirty minutes ↗</a></div>
-    <p class="stagelead">{{ content.follow_lead }} <a href="{{ links.linkedin }}">Message me on LinkedIn ↗</a></p>
+    <div class="shead"><h2>Follow me</h2><a href="{{ links.linkedin }}">Message me on LinkedIn ↗</a></div>
+    <p class="stagelead">{{ content.follow_lead }}</p>
     <div class="channels">
       {% for c in content.channels %}
       <a class="ch" href="{{ links[c.href] }}"><span class="k">{{ icon(c.icon) }}{{ c.k }}</span><span class="num{% if c.handle %} handle{% endif %}">{{ c.n }}{% if c.unit %}<small>{{ c.unit }}</small>{% endif %}</span><h3>{{ c.title }}</h3><p>{{ c.text }}</p></a>

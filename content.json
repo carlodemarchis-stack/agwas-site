@@ -469,5 +469,121 @@
       "url": "https://www.sportspromedia.com/events/"
     }
   ],
-  "follow_lead": "Every channel, every platform. To get in touch, LinkedIn is the door, or book thirty minutes straight into the calendar."
+  "follow_lead": "Every channel, every platform. To get in touch, LinkedIn is the door: a message there reaches me the same day.",
+  "brand": {
+    "title": "Brand guidelines",
+    "intro": "One person, one name, one mark. This page is for anyone who puts them on something: a conference slide, a partner page, a post, a credit line. It says what the mark is, which colours it uses, how the name is written, and what not to do. Everything on it can be downloaded below.",
+    "mark_head": "The mark",
+    "mark_p1": "Four horizontal bars, solid at the left, breaking into particles toward the right. Read left to right it is a broadcast becoming data: a match, a feed, a season turned into the points a chart or a model works with. That is the work, sports media, digital and AI, in one gesture.",
+    "mark_p2": "The four colours come from the scarf in the photo on the home page. The scarf is an accident that stuck; the mark is not about it. The bars always run left to right, always in this order from the top: sand, turquoise, cobalt, red.",
+    "versions_head": "Versions",
+    "versions_p": "Three files cover every use. The tile is for browser tabs, app icons and avatars. The wide mark sits next to the name in a masthead or a credit line. The bare mark is the tile without its background, for a page that already has a dark or white ground.",
+    "versions": [
+      {
+        "file": "agwas-mark-tile.svg",
+        "name": "Tile",
+        "use": "Favicon, app icon, avatar. Ink background, 7 px corner on 32. Works on light and dark tab bars."
+      },
+      {
+        "file": "agwas-mark-tile-paper.svg",
+        "name": "Tile, paper",
+        "use": "The same on white, for places that want a light tile."
+      },
+      {
+        "file": "agwas-mark-wide.svg",
+        "name": "Wide mark",
+        "use": "Next to the name at 20 to 28 px tall, or large on its own. The particles have room to dissolve."
+      },
+      {
+        "file": "agwas-mark.svg",
+        "name": "Bare mark",
+        "use": "No tile. On white or on a dark ground, never on a photograph or a colour."
+      },
+      {
+        "file": "agwas-touch-icon.svg",
+        "name": "Touch icon",
+        "use": "Square, no rounding: iOS rounds it. Export to 180 px PNG."
+      }
+    ],
+    "size_head": "Size and space",
+    "size_items": [
+      [
+        "Smallest tile",
+        "16 px. The bars still read; the particles become a frayed edge, which is fine."
+      ],
+      [
+        "Smallest wide mark",
+        "20 px tall. Below that, use the tile."
+      ],
+      [
+        "Clear space",
+        "One bar height on every side. Nothing else sits inside it."
+      ],
+      [
+        "Next to the name",
+        "Mark first, then the name, on one baseline, a gap of half the mark's height."
+      ]
+    ],
+    "colour_head": "Colour",
+    "colour_p": "The four colours belong to the mark and to data. Text is ink on paper, or paper on night in the apps. Cobalt is the only one of the four that holds as a link colour on both grounds; the other three never carry text.",
+    "colours": [
+      {
+        "name": "Paper",
+        "hex": "#FFFFFF",
+        "role": "Ground of the root site and the light hubs"
+      },
+      {
+        "name": "Ink",
+        "hex": "#111111",
+        "role": "Text on paper; the tile"
+      },
+      {
+        "name": "Night",
+        "hex": "#070910",
+        "role": "Ground of the sport apps"
+      },
+      {
+        "name": "Mute",
+        "hex": "#6F6F6F",
+        "role": "Secondary text on paper"
+      },
+      {
+        "name": "Sand",
+        "hex": "#E3A95F",
+        "role": "Mark, data"
+      },
+      {
+        "name": "Turquoise",
+        "hex": "#1FA6BD",
+        "role": "Mark, data"
+      },
+      {
+        "name": "Cobalt",
+        "hex": "#2D6FD2",
+        "role": "Mark, data, links"
+      },
+      {
+        "name": "Red",
+        "hex": "#D7442B",
+        "role": "Mark, data, sparingly"
+      }
+    ],
+    "name_head": "The name",
+    "name_p1": "A Guy With A Scarf. Title case, every word, always complete. In a byline or a masthead it is followed by the person: A Guy With A Scarf · Carlo De Marchis, with the name in mute.",
+    "name_p2": "AGWAS is a file name and a way of talking, not a public mark. Never \"a guy with a scarf\" in lower case, never \"Guy with a Scarf\", never \"AGWAS\" in a title.",
+    "type_head": "Type",
+    "type_p": "Helvetica Neue, with Helvetica and Arial as fallbacks. The name is set in weight 500. Headings are 300 or 400 with tight letter spacing; body text is 400. The sport apps keep their own faces inside; the name and the mark look the same everywhere.",
+    "dont_head": "Do not",
+    "donts": [
+      "Mirror the mark or run the particles right to left.",
+      "Recolour the bars, drop one, or reorder them.",
+      "Stretch the tile or the wide mark; scale them as a block.",
+      "Put the bare mark on a photograph, a gradient or a colour.",
+      "Add a scarf, a letter or a sport pictogram to it.",
+      "Set the name in lower case, in a serif, or as an acronym."
+    ],
+    "download_head": "Download",
+    "download_p": "SVG, which scales to any size. Export PNG from the SVG when a format needs it.",
+    "note": "Brand guidelines, first edition, 5 November 2026. Mark and page from the identity study of the same date."
+  }
 }

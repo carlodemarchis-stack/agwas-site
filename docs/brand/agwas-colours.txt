@@ -1,0 +1,10 @@
+A Guy With A Scarf · colours
+
+Paper      #FFFFFF   Ground of the root site and the light hubs
+Ink        #111111   Text on paper; the tile
+Night      #070910   Ground of the sport apps
+Mute       #6F6F6F   Secondary text on paper
+Sand       #E3A95F   Mark, data
+Turquoise  #1FA6BD   Mark, data
+Cobalt     #2D6FD2   Mark, data, links
+Red        #D7442B   Mark, data, sparingly

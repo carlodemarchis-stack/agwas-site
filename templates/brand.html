@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block title %}Brand guidelines · {{ site.title }}{% endblock %}
+{% block desc %}The A Guy With A Scarf mark, colours, name and type, with the files to download.{% endblock %}
+{% block canon %}{{ base }}/brand/{% endblock %}
+{% block body %}
+{% set b = content.brand %}
+<div class="wrap brandpage">
+  <section class="sec first page-head">
+    <div class="shead"><h2>{{ b.title }}</h2><a href="#download">Download the files ↓</a></div>
+    <p class="lead">{{ b.intro }}</p>
+  </section>
+
+  <section class="sec">
+    <div class="shead"><h2>{{ b.mark_head }}</h2></div>
+    <div class="markshow">
+      <div class="panel light"><img src="/brand/agwas-mark-wide.svg" alt="The mark: four colour bars dissolving into particles, on white"></div>
+      <div class="panel dark"><img src="/brand/agwas-mark-wide.svg" alt="The same mark on a dark ground"></div>
+    </div>
+    <div class="two">
+      <p>{{ b.mark_p1 }}</p>
+      <p>{{ b.mark_p2 }}</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="shead"><h2>{{ b.versions_head }}</h2></div>
+    <p class="lead">{{ b.versions_p }}</p>
+    <ul class="versions">
+      {% for v in b.versions %}
+      <li>
+        <div class="vshow"><span class="light"><img src="/brand/{{ v.file }}" alt=""></span><span class="dark"><img src="/brand/{{ v.file }}" alt=""></span></div>
+        <b>{{ v.name }}</b><p>{{ v.use }}</p><a class="u" href="/brand/{{ v.file }}" download>{{ v.file }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="sec">
+    <div class="shead"><h2>{{ b.size_head }}</h2></div>
+    <div class="sizes">
+      <div class="scale"><img src="/brand/agwas-mark-tile.svg" width="16" height="16" alt=""><img src="/brand/agwas-mark-tile.svg" width="32" height="32" alt=""><img src="/brand/agwas-mark-tile.svg" width="64" height="64" alt=""><img src="/brand/agwas-mark-tile.svg" width="128" height="128" alt=""><span class="muted">16 · 32 · 64 · 128 px</span></div>
+      <dl class="spec">{% for k, v in b.size_items %}<dt>{{ k }}</dt><dd>{{ v }}</dd>{% endfor %}</dl>
+    </div>
+    <div class="lockup">
+      <span class="light"><img src="/brand/agwas-mark-wide.svg" alt="">A Guy With A Scarf <em>· {{ site.person }}</em></span>
+      <span class="dark"><img src="/brand/agwas-mark-wide.svg" alt="">A Guy With A Scarf <em>· {{ site.person }}</em></span>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="shead"><h2>{{ b.colour_head }}</h2></div>
+    <p class="lead">{{ b.colour_p }}</p>
+    <ul class="swatches">
+      {% for c in b.colours %}
+      <li><i style="background:{{ c.hex }}"></i><b>{{ c.name }}</b><code>{{ c.hex }}</code><span>{{ c.role }}</span></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="sec">
+    <div class="shead"><h2>{{ b.name_head }}</h2></div>
+    <p class="wordmark">A Guy With A Scarf <em>· {{ site.person }}</em></p>
+    <div class="two">
+      <p>{{ b.name_p1 }}</p>
+      <p>{{ b.name_p2 }}</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="shead"><h2>{{ b.type_head }}</h2></div>
+    <p class="typespec"><span style="font-weight:300">Helvetica Neue 300</span><span style="font-weight:400">Helvetica Neue 400</span><span style="font-weight:500">Helvetica Neue 500</span><span style="font-weight:700">Helvetica Neue 700</span></p>
+    <p class="lead">{{ b.type_p }}</p>
+  </section>
+
+  <section class="sec">
+    <div class="shead"><h2>{{ b.dont_head }}</h2></div>
+    <ul class="donts">{% for d in b.donts %}<li>{{ d }}</li>{% endfor %}</ul>
+  </section>
+
+  <section class="sec" id="download">
+    <div class="shead"><h2>{{ b.download_head }}</h2></div>
+    <p class="lead">{{ b.download_p }}</p>
+    <ul class="files">
+      {% for v in b.versions %}<li><a class="u" href="/brand/{{ v.file }}" download>{{ v.file }}</a> <span class="muted">{{ v.name }}</span></li>{% endfor %}
+      <li><a class="u" href="/brand/agwas-colours.txt" download>agwas-colours.txt</a> <span class="muted">the eight colours as hex</span></li>
+    </ul>
+    <p class="muted" style="margin-top:28px">{{ b.note }}</p>
+  </section>
+</div>
+{% endblock %}

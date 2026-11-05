@@ -133,7 +133,8 @@ def main():
 
     if not NO_IMAGES:
         derive("hero-portrait")          # referenced by the <picture> source, not through pic()
-    pages = {"index.html": ("index.html", "home"), "stage/index.html": ("stage.html", "stage"), "404.html": ("404.html", "404")}
+    pages = {"index.html": ("index.html", "home"), "stage/index.html": ("stage.html", "stage"),
+             "brand/index.html": ("brand.html", "brand"), "404.html": ("404.html", "404")}
     for out, (tpl, page) in pages.items():
         html = env.get_template(tpl).render(page=page)
         path = os.path.join(DOCS, out)
@@ -141,14 +142,18 @@ def main():
         open(path, "w").write(html)
 
     for f in os.listdir(os.path.join(ROOT, "static")):
-        shutil.copy(os.path.join(ROOT, "static", f), os.path.join(DOCS, f))
+        src = os.path.join(ROOT, "static", f)
+        if os.path.isdir(src):
+            shutil.copytree(src, os.path.join(DOCS, f), dirs_exist_ok=True)
+        else:
+            shutil.copy(src, os.path.join(DOCS, f))
     if not NO_IMAGES:
         og_image()
     open(os.path.join(DOCS, ".nojekyll"), "w").close()
     open(os.path.join(DOCS, "CNAME"), "w").write(SITE["domain"] + "\n")
     with open(os.path.join(DOCS, "sitemap.xml"), "w") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
-        for u in ("/", "/stage/"):
+        for u in ("/", "/stage/", "/brand/"):
             f.write(f"  <url><loc>{SITE['base_url']}{u}</loc></url>\n")
         f.write("</urlset>\n")
     open(os.path.join(DOCS, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\nSitemap: {SITE['base_url']}/sitemap.xml\n")
