@@ -1,0 +1,5 @@
+<ul class="next">
+  {% for e in content.events %}
+  <li><span class="d">{{ e.date }}</span><span class="r">{{ e.role }}</span><span class="t"><a href="{{ e.url }}"><b>{{ e.name }}</b></a> <span>{{ e.place }}{% if e.what %}. {{ e.what }}{% endif %}</span></span></li>
+  {% endfor %}
+</ul>

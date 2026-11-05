@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "_icons.html" import icon %}
 {% block body %}
 <div class="herobg">
   <picture>
@@ -33,6 +34,10 @@
         <div class="meta">
           {% for k, v in content.about.meta %}<b>{{ k }}</b><span>{{ v|safe_html }}</span>{% endfor %}
         </div>
+        <div class="scarf">
+          <h3>{{ content.about.scarf.title }}</h3>
+          <p>{{ content.about.scarf.text }}</p>
+        </div>
       </div>
       <figure>
         {{ pic("portrait", alt="Carlo De Marchis", sizes="(max-width:860px) 100vw, 38vw") }}
@@ -66,8 +71,13 @@
   <section class="sec" id="work">
     <div class="shead"><h2>Work</h2><a href="/stage/">The stage record ↗</a></div>
     <nav class="subnav" aria-label="Work">
-      <a href="#stage">On stage, online and on air</a><a href="#dataviz">Live sport experiences</a><a href="{{ links.research }}">Research hub ↗</a><a href="{{ links.ytft }}">YouTube Football Tracker ↗</a>
+      <a href="#next">Upcoming</a><a href="#stage">On stage, online and on air</a><a href="#dataviz">Live sport experiences</a><a href="{{ links.research }}">Research hub ↗</a><a href="{{ links.ytft }}">YouTube Football Tracker ↗</a>
     </nav>
+
+    <div class="sub" id="next">
+      <h3 class="subhead">Upcoming</h3>
+      {% include "_events.html" %}
+    </div>
 
     <div class="sub" id="stage">
       <h3 class="subhead">On stage, online and on air</h3>
@@ -104,11 +114,11 @@
 
   {# ---------- 4. Follow me, contact included ---------- #}
   <section class="sec" id="follow">
-    <div class="shead"><h2>Follow me</h2><a href="{{ links.linkedin }}">Message me on LinkedIn ↗</a></div>
-    <p class="stagelead">Every channel, every platform. To get in touch, LinkedIn is the door: a message there reaches me the same day.</p>
+    <div class="shead"><h2>Follow me</h2><a href="{{ links.booking }}">Book thirty minutes ↗</a></div>
+    <p class="stagelead">{{ content.follow_lead }} <a href="{{ links.linkedin }}">Message me on LinkedIn ↗</a></p>
     <div class="channels">
       {% for c in content.channels %}
-      <a class="ch" href="{{ links[c.href] }}"><span class="k">{{ c.k }}</span><span class="num{% if c.handle %} handle{% endif %}">{{ c.n }}{% if c.unit %}<small>{{ c.unit }}</small>{% endif %}</span><h3>{{ c.title }}</h3><p>{{ c.text }}</p></a>
+      <a class="ch" href="{{ links[c.href] }}"><span class="k">{{ icon(c.icon) }}{{ c.k }}</span><span class="num{% if c.handle %} handle{% endif %}">{{ c.n }}{% if c.unit %}<small>{{ c.unit }}</small>{% endif %}</span><h3>{{ c.title }}</h3><p>{{ c.text }}</p></a>
       {% endfor %}
     </div>
   </section>

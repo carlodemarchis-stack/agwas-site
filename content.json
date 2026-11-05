@@ -329,7 +329,11 @@
         "Also",
         "LinkedIn Top Voice · Harvard Business School · Turin, Italy"
       ]
-    ]
+    ],
+    "scarf": {
+      "title": "Why the scarf",
+      "text": "The scarf came first. For years I turned up at conferences in big scarves, the kind you notice from the back of the room, and people started remembering the scarf before the surname. The name stuck the day David Cushnan introduced me from the stage at Leaders Week in London as a guy with a scarf. The newsletter followed on 15 November 2022, and the title was never in doubt."
+    }
   },
   "channels": [
     {
@@ -338,7 +342,8 @@
       "n": "13,066",
       "unit": "followers",
       "title": "Daily notes",
-      "text": "Streaming, live sport and the business of media technology, most days."
+      "text": "Streaming, live sport and the business of media technology, most days.",
+      "icon": "linkedin"
     },
     {
       "href": "linkedin_newsletter",
@@ -346,7 +351,8 @@
       "n": "5,101",
       "unit": "subscribers",
       "title": "A guy with a scarf",
-      "text": "An original take on technology in the world of sports and media. Weekly."
+      "text": "An original take on technology in the world of sports and media. Weekly.",
+      "icon": "linkedin_newsletter"
     },
     {
       "href": "substack",
@@ -354,7 +360,8 @@
       "n": "Free",
       "unit": "+ premium",
       "title": "The long form",
-      "text": "Every article, the episodes, and the premium editions: course, book, full research."
+      "text": "Every article, the episodes, and the premium editions: course, book, full research.",
+      "icon": "substack"
     },
     {
       "href": "youtube",
@@ -362,7 +369,18 @@
       "n": "Ep. 61",
       "unit": "and counting",
       "title": "The conversations",
-      "text": "Recorded interviews with the people who build, buy and run sports media technology."
+      "text": "Recorded interviews with the people who build, buy and run sports media technology.",
+      "icon": "youtube"
+    },
+    {
+      "href": "spotify",
+      "icon": "spotify",
+      "k": "Podcast",
+      "n": "Spotify",
+      "unit": "and Apple",
+      "handle": true,
+      "title": "A guy with a scarf, audio",
+      "text": "The conversations and Retention Zone as a podcast, for the commute and the gym."
     },
     {
       "href": "instagram",
@@ -371,7 +389,8 @@
       "unit": "",
       "handle": true,
       "title": "Stages and cities",
-      "text": "The scarf on the road: conference floors, studios, Turin, and the occasional football pitch."
+      "text": "The scarf on the road: conference floors, studios, Turin, and the occasional football pitch.",
+      "icon": "instagram"
     },
     {
       "href": "x",
@@ -380,7 +399,8 @@
       "unit": "",
       "handle": true,
       "title": "Short takes",
-      "text": "Live from events and the quick reactions that do not need a thousand words."
+      "text": "Live from events and the quick reactions that do not need a thousand words.",
+      "icon": "x"
     },
     {
       "href": "research",
@@ -388,7 +408,8 @@
       "n": "3",
       "unit": "reports",
       "title": "Datasets, sources attached",
-      "text": "The IBC2026 vendor scan, automated match video, the season on YouTube."
+      "text": "The IBC2026 vendor scan, automated match video, the season on YouTube.",
+      "icon": "research"
     },
     {
       "href": "course",
@@ -396,7 +417,8 @@
       "n": "12",
       "unit": "lessons",
       "title": "Better B2B vendor",
-      "text": "Twelve video lessons, the decks, the audio, and the companion book. Included in premium."
+      "text": "Twelve video lessons, the decks, the audio, and the companion book. Included in premium.",
+      "icon": "course"
     },
     {
       "href": "amazon",
@@ -404,7 +426,8 @@
       "n": "200",
       "unit": "pages",
       "title": "10 Things to Consider",
-      "text": "Fifty-one working lists for the vendor side of sports and media technology."
+      "text": "Fifty-one working lists for the vendor side of sports and media technology.",
+      "icon": "amazon"
     },
     {
       "href": "ytft",
@@ -412,7 +435,8 @@
       "n": "100+",
       "unit": "clubs",
       "title": "YouTube Football Tracker",
-      "text": "How clubs across Europe's top five leagues perform on YouTube, tracked daily."
+      "text": "How clubs across Europe's top five leagues perform on YouTube, tracked daily.",
+      "icon": "ytft"
     }
   ],
   "footer_note": "A Guy with a Scarf is Carlo De Marchis. The sport experiences are independent, non-commercial fan projects, not affiliated with FIFA, the ATP, the WTA, Formula 1, the NFL, the NBA, the NHL, the PGA TOUR or World Athletics. Data and imagery belong to their owners.",
@@ -420,5 +444,30 @@
     "title": "On stage, online and on air",
     "intro": "Moderation is preparation. Before a panel I read what each guest has published in the last year, write the questions they have not been asked, and cut the ones they have. On the day the job is to keep the clock, stop the pitch, and let the disagreement happen. Keynotes get the same treatment in reverse: one argument, the numbers that carry it, and the slide count kept low enough that people look at me.",
     "offer": "Available as moderator, host or keynote speaker for conferences, client events, webinars and podcasts, in English and Italian, remote or in person. Turin is the base; London, Madrid, Düsseldorf and Monaco were the stages of the last twelve months."
-  }
+  },
+  "events": [
+    {
+      "date": "10 and 11 November 2026",
+      "name": "SFS, Social Football Summit",
+      "place": "Allianz Stadium, Turin",
+      "role": "Attending",
+      "url": "https://www.socialfootballsummit.com/"
+    },
+    {
+      "date": "11 November 2026",
+      "name": "Streaming Media Connect",
+      "place": "Online",
+      "role": "On the panel",
+      "what": "Global sports streaming: lessons from the 2026 World Cup",
+      "url": "https://www.streamingmedia.com/Articles/News/Online-Video-News/Sneak-Preview-Global-Sports-Streaming-Industry-Lessons-From-the-2026-World-Cup-177261.aspx"
+    },
+    {
+      "date": "2 and 3 December 2026",
+      "name": "SportsPro Media Summit",
+      "place": "Meliá Castilla, Madrid",
+      "role": "Attending",
+      "url": "https://www.sportspromedia.com/events/"
+    }
+  ],
+  "follow_lead": "Every channel, every platform. To get in touch, LinkedIn is the door, or book thirty minutes straight into the calendar."
 }

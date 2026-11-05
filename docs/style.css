@@ -176,7 +176,8 @@ img{display:block;max-width:100%;height:auto}
 .channels{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink)}
 .ch{display:block;padding:18px 18px 22px 0;border-bottom:1px solid var(--line);min-height:170px;position:relative}
 .ch + .ch{padding-left:18px;border-left:1px solid var(--line)}
-.ch .k{font-size:12.5px;color:var(--faint);text-transform:uppercase;letter-spacing:.06em}
+.ch .k{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--faint);text-transform:uppercase;letter-spacing:.06em}
+.ch .k svg{width:20px;height:20px;color:var(--ink);flex:none}
 .ch .num{position:absolute;right:18px;top:16px;font-size:22px;letter-spacing:-.02em;text-align:right;line-height:1.1}
 .ch .num.handle{font-size:14px;color:var(--mute);top:19px}
 .ch .num small{display:block;font-size:11px;color:var(--faint);letter-spacing:.04em;text-transform:uppercase}
@@ -185,6 +186,21 @@ img{display:block;max-width:100%;height:auto}
 .ch:hover h3{text-decoration:underline}
 @media (max-width:1000px){.channels{grid-template-columns:1fr 1fr}.ch:nth-child(odd){padding-left:0;border-left:0}.ch:nth-child(even){padding-left:18px;border-left:1px solid var(--line)}}
 @media (max-width:520px){.channels{grid-template-columns:1fr}.ch,.ch:nth-child(even){padding-left:0;border-left:0}}
+
+/* upcoming */
+.next{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.next li{display:grid;grid-template-columns:190px 110px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15.5px;line-height:1.45;align-items:baseline}
+.next .d{color:var(--mute);font-size:14px;font-variant-numeric:tabular-nums}
+.next .r{font-weight:500}
+.next .t b{font-weight:500}
+.next .t a:hover b{text-decoration:underline}
+.next .t span{color:var(--mute)}
+@media (max-width:760px){.next li{grid-template-columns:1fr 1fr}.next .t{grid-column:1/-1}}
+
+/* why the scarf */
+.scarf{margin-top:30px;padding-top:22px;border-top:1px solid #2a2a2a;max-width:60ch}
+.scarf h3{margin:0 0 8px;font-size:13px;font-weight:400;color:var(--dark-mute);text-transform:uppercase;letter-spacing:.06em}
+.scarf p{margin:0;font-size:clamp(15px,1.25vw,18px);line-height:1.5;color:var(--dark-ink)}
 
 /* footer */
 footer{margin-top:clamp(64px,10vh,120px);border-top:1px solid var(--ink);padding:26px 0 70px}

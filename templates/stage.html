@@ -9,7 +9,12 @@
     <p class="lead">{{ content.stage_page.intro }}</p>
   </section>
 
-  <div class="stagerow big">
+  <section class="sec">
+    <div class="shead"><h2>Upcoming</h2><a href="{{ links.booking }}">Book thirty minutes ↗</a></div>
+    {% include "_events.html" %}
+  </section>
+
+  <div class="stagerow big" style="margin-top:clamp(40px,6vh,72px)">
     {% for p in content.stage_photos %}
     <figure>{{ pic(p.img, alt=p.caption, sizes="(max-width:700px) 100vw, 33vw") }}<figcaption>{{ p.caption }}</figcaption></figure>
     {% endfor %}
