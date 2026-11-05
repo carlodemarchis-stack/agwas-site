@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}On stage and on air · {{ site.title }}{% endblock %}
+{% block desc %}Carlo De Marchis as moderator, host and keynote speaker: eight stages in twelve months, five formats hosted online, in English and Italian. The full record, 2025 to 2026.{% endblock %}
+{% block canon %}{{ base }}/stage/{% endblock %}
+{% block body %}
+<div class="wrap">
+  <section class="sec first page-head">
+    <div class="shead"><h2>{{ content.stage_page.title }}</h2><a href="{{ links.linkedin }}">Book a moderator ↗</a></div>
+    <p class="lead">{{ content.stage_page.intro }}</p>
+  </section>
+
+  <div class="stagerow big">
+    {% for p in content.stage_photos %}
+    <figure>{{ pic(p.img, alt=p.caption, sizes="(max-width:700px) 100vw, 33vw") }}<figcaption>{{ p.caption }}</figcaption></figure>
+    {% endfor %}
+  </div>
+
+  <section class="sec">
+    <div class="shead"><h2>The record, 2025 to 2026</h2><span class="muted">{{ numbers.stages_12_months }} stages · {{ numbers.online_formats }} online formats</span></div>
+    {% include "_record.html" %}
+  </section>
+
+  <section class="sec">
+    <div class="shead"><h2>Booking</h2><a href="{{ links.linkedin }}">Message me on LinkedIn ↗</a></div>
+    <p class="lead">{{ content.stage_page.offer }}</p>
+    <div class="avail">{% for a in content.availability %}<span>{{ a }}</span>{% endfor %}</div>
+  </section>
+</div>
+{% endblock %}

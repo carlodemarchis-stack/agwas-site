@@ -1,0 +1,115 @@
+{
+  "picker": {
+    "who": {
+      "executive teams": "When the plan on the slide and the product in the field stop agreeing, I sit with the team until they do.",
+      "founders": "Founders get the buyer's side of the table: how sport actually procures, and what kills a good product in month nine.",
+      "boards": "Boards get the three-year view, in plain language, with the trade-offs the deck left out.",
+      "technology vendors": "Vendors get thirty-four years of having been one: positioning, pricing, delivery, and surviving the renewal.",
+      "leagues and rights holders": "Rights holders get a reading of the technology market from someone who sold into it for a living.",
+      "event organisers": "Organisers get a host or a keynote from someone who has shipped the things being discussed."
+    },
+    "what": {
+      "streaming economics": "streaming economics: price, churn, bundles, what the fan will actually pay for",
+      "product and platform strategy": "product and platform strategy, from the OTT stack to the roadmap nobody wants to cut",
+      "retention and monetisation": "retention and monetisation, the only two numbers the board remembers",
+      "the practical impact of AI": "the practical impact of AI: what ships, what demos, and who runs the tools",
+      "selling technology to sport": "selling technology to sport, the subject of the course and the book",
+      "moderating the stage": "moderating the stage: panels, round tables and webinars prepared like interviews, eight of them in the last twelve months",
+      "telling the story in public": "telling the story in public: content partnerships, interviews, the stage"
+    },
+    "tour": [
+      ["executive teams", "streaming economics"],
+      ["founders", "product and platform strategy"],
+      ["boards", "retention and monetisation"],
+      ["technology vendors", "selling technology to sport"],
+      ["event organisers", "moderating the stage"],
+      ["leagues and rights holders", "the practical impact of AI"]
+    ]
+  },
+  "byline": ["Carlo De Marchis · Advisor in sports and media technology", "Turin, Italy, an Olympic city and home of the ATP Finals"],
+  "feature": {
+    "title": "Thirty-five years on the vendor side of sports and media technology.",
+    "text": "Olympics, FIFA World Cups, UEFA, the NFL and Formula 1, from the first web team at <b>Deltatre</b> in 1995 to Chief Product &amp; Marketing Officer and Group Chief Evangelist. Since 2023 I advise executive teams, founders and boards on streaming, retention, monetisation and the practical impact of AI. <b>A Guy with a Scarf</b> is where the ideas get tested in public: a weekly newsletter, recorded conversations, published research, a course, and ten live data experiences built from official feeds. LinkedIn Top Voice."
+  },
+  "strip": [
+    {"href": "/stage/", "img": "stage-tile", "pos": "50% 20%", "title": "On stage, on air, in the room", "text": "Moderator and keynote speaker, eight stages in twelve months; host of Retention Zone and the conversations; advisor to executive teams, founders and boards."},
+    {"href": "#channels", "img": "b2b", "pos": "left top", "title": "Writing and teaching", "text": "A weekly newsletter with 5,101 subscribers on LinkedIn, the long form on Substack, a twelve-lesson course and a 200-page book."},
+    {"href": "#work", "img": "f1", "pos": "left top", "title": "Live data experiences", "text": "Ten sports, one card or tower at a time, from official feeds and updated every night. F1, tennis, football, NFL, NBA, NHL and more."},
+    {"href": "https://research.aguywithascarf.com/", "img": "research", "pos": "left top", "title": "Research, sources attached", "text": "The IBC2026 vendor scan, automated match video, the season on YouTube: datasets published with their methods."}
+  ],
+  "stage_photos": [
+    {"img": "stage-1", "caption": "International Sports Convention, keynote."},
+    {"img": "stage-2", "caption": "In conversation, on a television set."},
+    {"img": "stage-3", "caption": "SportsPro AI + Tech, London, September 2026."}
+  ],
+  "stage_lead": "Eight stages in twelve months, in four countries, as moderator or keynote speaker. Five formats hosted online, 144 episodes between them.",
+  "stages": [
+    {"date": "Sep 2026", "role": "Moderated", "where": "SportsPro AI + Tech, London.", "what": "AI in production, with Fox, Greenfly and MediaKind."},
+    {"date": "Jun 2026", "role": "Spoke", "where": "Festival della Serie A, Parma.", "what": "The media operations panel, and the \"Ecosistema Dati\" round table as moderator."},
+    {"date": "Apr 2026", "role": "Moderated", "where": "SportsPro London.", "what": "From unknown to unified: fragmented audiences into revenue, with Bath Rugby and Data Talks."},
+    {"date": "Mar 2026", "role": "Moderated", "where": "SportsInnovation, Düsseldorf.", "what": "Two main-stage sessions: 3D data in football, and the future of officiating with FIFA and Hawk-Eye. Fourth edition in a row."},
+    {"date": "Feb 2026", "role": "Spoke", "where": "SVG Europe at Sky Italia, Milan.", "what": "How sport can drive value with generative AI."},
+    {"date": "Nov 2025", "role": "Spoke", "where": "Product Byte Live, London.", "what": "With ITVx, World Horse Racing and AWS."},
+    {"date": "Nov 2025", "role": "Moderated", "where": "SportsPro Media Summit, Madrid.", "what": "From Stadium to Studio, with Telefónica; and the sponsorship session with FC Barcelona."},
+    {"date": "Oct 2025", "role": "Live podcast", "where": "SPORTEL Monaco.", "what": "On the floor with Richard Gillis of Unofficial Partner."}
+  ],
+  "air": [
+    {"name": "Retention Zone", "text": "presented by Cleeng. Hosted and produced, on YouTube, Spotify and Substack.", "n": "83", "unit": "episodes"},
+    {"name": "A guy with a scarf, the conversations", "text": "recorded interviews with the people who run this industry.", "n": "61", "unit": "episodes"},
+    {"name": "SportsPro Insider Series", "text": "the data-driven approach to sports media, with LALIGA, Bundesliga and Sportradar. May 2026.", "n": "45", "unit": "minutes"},
+    {"name": "Dolby OptiView StreamOn", "text": "live webinars in April and September 2026, and the IBC 2026 booth tour in three interviews.", "n": "3", "unit": "live shows"},
+    {"name": "LiveU", "text": "\"Occhi puntati sul Live\", a webinar in Italian. November 2025.", "n": "1", "unit": "in Italian"}
+  ],
+  "work_strip": ["f1", "tennis", "nfl", "midterms"],
+  "work": [
+    {"id": "f1", "img": "f1", "href": "https://f1.aguywithascarf.com/", "name": "F1viz", "short": "A season read lap by lap.", "text": "Three films, a deep dive for every Grand Prix, a timing tower that re-sorts itself every lap."},
+    {"id": "tennis", "img": "tennis", "href": "https://tennis.aguywithascarf.com/", "name": "Tennis", "short": "ATP and WTA Top 100 as cards.", "text": "ATP and WTA Top 100 as full-screen cards, and the draws drawn as fans."},
+    {"id": "nfl", "img": "nfl", "href": "https://nfl.aguywithascarf.com/", "name": "NFL Season Tower", "short": "Wins up, losses down.", "text": "Thirty-two towers on one baseline, the season as a shape."},
+    {"id": "midterms", "img": "elections", "href": "https://elections.aguywithascarf.com/", "name": "US Midterms 2026", "short": "Every seat on the ballot.", "text": "Three forecasters side by side, filling in as the races are called."},
+    {"id": "worldcup", "img": "worldcup", "href": "https://worldcupbracket.aguywithascarf.com/", "name": "World Cup 2026", "short": "One radial bracket.", "text": "The whole knockout as one radial bracket, and a film that replays it."},
+    {"id": "football", "img": "top5", "href": "https://top5.aguywithascarf.com/", "name": "Football, top five leagues", "short": "Season towers, nightly.", "text": "Season towers, the Top 50 scorers film and team cards. The idea is my son's."},
+    {"id": "nba", "img": "nba", "href": "https://nba.aguywithascarf.com/", "name": "NBA", "short": "Film and towers.", "text": "Every team and the hundred leading scorers, shot charts included."},
+    {"id": "nhl", "img": "nhl", "href": "https://nhl.aguywithascarf.com/", "name": "NHL", "short": "Every shot on a rink.", "text": "Every shot on a rink for the hundred leading scorers."},
+    {"id": "golf", "img": "golf", "href": "https://golf.aguywithascarf.com/", "name": "PGA TOUR", "short": "Whole-field scorecards.", "text": "The FedExCup top seventy, with the whole field's scorecard hole by hole."},
+    {"id": "athletics", "img": "athletics", "href": "https://athletics.aguywithascarf.com/", "name": "Athletics", "short": "A century of records.", "text": "A century of world records as staircases, and the ghost race."},
+    {"id": "research", "img": "research", "href": "https://research.aguywithascarf.com/", "name": "Research hub", "short": "Datasets, sources attached.", "text": "Working datasets behind the writing, published with method and sources."}
+  ],
+  "services": [
+    {"name": "Advisory", "text": "Mid to long-term advisory roles at moments of transition, where strategy, product and business model have to move together. <b>Executive teams, founders, boards.</b>"},
+    {"name": "Fractional roles", "text": "Chief product, chief evangelist, chief strategy, for a season rather than a slide deck. <b>Inside your team, with a start and an end date.</b>"},
+    {"name": "Content partnerships", "text": "Selective collaborations through A Guy with a Scarf: booth tours, interview series, event coverage, with the disclosure written inside the paragraph. <b>Dolby OptiView and Mercury Intermedia</b> in 2026."},
+    {"name": "Moderation, live and online", "text": "Panels, round tables, webinars and live podcasts, prepared like an interview and run to time. <b>Eight stages and five online formats in the last twelve months.</b>"},
+    {"name": "Keynotes and talks", "text": "Streaming economics, AI in production, selling technology to sport. SportsPro, SportsInnovation, SVG Europe, Festival della Serie A, SPORTEL."},
+    {"name": "Courses and the book", "text": "<b>Becoming a Better B2B Tech Vendor in Sports and Media</b>: twelve video lessons and a 200-page companion book, <i>10 Things to Consider</i>, on Amazon."},
+    {"name": "Data experiences", "text": "Design and direction of live sport data visualisation. Ten public experiences built from official feeds, and the same craft for your product."}
+  ],
+  "availability": ["Remote or in person, Turin", "Selective by design", "Write on LinkedIn to start"],
+  "about": {
+    "big": "I work at the intersection of sports, media and technology, helping leaders through the moments where strategy, product and business model collide.",
+    "paras": [
+      "Most of my professional life has been spent on the vendor side, long enough to have seen several cycles repeat themselves with different labels and similar outcomes. The view is pragmatic: innovation grounded in execution, not theory.",
+      "I advise companies in this industry, Dolby OptiView and Mercury Intermedia among them, so read the writing as interested rather than neutral. The data experiences I build myself, in the evenings. The scarf is real."
+    ],
+    "meta": [
+      ["Now", "Founder, A Guy with a Scarf · Strategic Advisor, BuzzMyVideos"],
+      ["Before", "Deltatre, 1988 to 2023 · Group Chief Evangelist · Chief Product &amp; Marketing Officer · Group CTO"],
+      ["Also", "LinkedIn Top Voice · Harvard Business School · Turin, Italy"]
+    ]
+  },
+  "channels": [
+    {"href": "linkedin", "k": "LinkedIn", "n": "13,066", "unit": "followers", "title": "Daily notes", "text": "Streaming, live sport and the business of media technology, most days."},
+    {"href": "linkedin_newsletter", "k": "LinkedIn newsletter", "n": "5,101", "unit": "subscribers", "title": "A guy with a scarf", "text": "An original take on technology in the world of sports and media. Weekly."},
+    {"href": "substack", "k": "Substack", "n": "Free", "unit": "+ premium", "title": "The long form", "text": "Every article, the episodes, and the premium editions: course, book, full research."},
+    {"href": "youtube", "k": "YouTube", "n": "Ep. 61", "unit": "and counting", "title": "The conversations", "text": "Recorded interviews with the people who build, buy and run sports media technology."},
+    {"href": "research", "k": "Research hub", "n": "3", "unit": "reports", "title": "Datasets, sources attached", "text": "The IBC2026 vendor scan, automated match video, the season on YouTube."},
+    {"href": "course", "k": "Course", "n": "12", "unit": "lessons", "title": "Better B2B vendor", "text": "Twelve video lessons, the decks, the audio, and the companion book. Included in premium."},
+    {"href": "amazon", "k": "Amazon", "n": "200", "unit": "pages", "title": "10 Things to Consider", "text": "Fifty-one working lists for the vendor side of sports and media technology."},
+    {"href": "ytft", "k": "App", "n": "100+", "unit": "clubs", "title": "YouTube Football Tracker", "text": "How clubs across Europe's top five leagues perform on YouTube, tracked daily."}
+  ],
+  "footer_note": "A Guy with a Scarf is Carlo De Marchis. The sport experiences are independent, non-commercial fan projects, not affiliated with FIFA, the ATP, the WTA, Formula 1, the NFL, the NBA, the NHL, the PGA TOUR or World Athletics. Data and imagery belong to their owners.",
+  "stage_page": {
+    "title": "On stage and on air",
+    "intro": "Moderation is preparation. Before a panel I read what each guest has published in the last year, write the questions they have not been asked, and cut the ones they have. On the day the job is to keep the clock, stop the pitch, and let the disagreement happen. Keynotes get the same treatment in reverse: one argument, the numbers that carry it, and the slide count kept low enough that people look at me.",
+    "offer": "Available as moderator, host or keynote speaker for conferences, client events, webinars and podcasts, in English and Italian, remote or in person. Turin is the base; London, Madrid, Düsseldorf and Monaco were the stages of the last twelve months."
+  }
+}

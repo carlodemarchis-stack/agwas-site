@@ -1,0 +1,34 @@
+{
+  "base_url": "https://aguywithascarf.com",
+  "domain": "aguywithascarf.com",
+  "site_name": "A Guy With A Scarf",
+  "person": "Carlo De Marchis",
+  "title": "A Guy With A Scarf · Carlo De Marchis",
+  "description": "Carlo De Marchis, advisor in sports and media technology. Thirty-five years on the vendor side, a weekly newsletter, recorded conversations, published research, a course, and ten live sport data experiences. Turin, Italy.",
+  "umami_website_id": "4399b241-9305-4c4d-917f-bc57e06bfa28",
+  "umami_src": "https://m.aguywithascarf.com/k.js",
+  "releases_json": "../dataviz/releases.json",
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/carlodemarchis/",
+    "linkedin_newsletter": "https://www.linkedin.com/newsletters/a-guy-with-a-scarf-6998145822441775104/",
+    "linkedin_page": "https://www.linkedin.com/company/a-guy-with-a-scarf/",
+    "substack": "https://aguywithascarf.substack.com/",
+    "youtube": "https://www.youtube.com/channel/UCdwdust89EZlRXUjUTUarPw",
+    "amazon": "https://www.amazon.it/dp/B0GP66Q1ZK",
+    "dataviz": "https://dataviz.aguywithascarf.com/",
+    "research": "https://research.aguywithascarf.com/",
+    "course": "https://b2b.aguywithascarf.com/",
+    "ytft": "https://ytft.aguywithascarf.com/",
+    "art": "https://art.carlodemarchis.it/",
+    "tec": "https://torinoecultura.it/"
+  },
+  "numbers": {
+    "as_of": "2026-11-04",
+    "linkedin_followers": "13,066",
+    "newsletter_subscribers": "5,101",
+    "episodes": 61,
+    "retention_zone_episodes": 83,
+    "stages_12_months": 8,
+    "online_formats": 5
+  }
+}

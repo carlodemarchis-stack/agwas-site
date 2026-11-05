@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Not found · {{ site.title }}{% endblock %}
+{% block desc %}That page is not here.{% endblock %}
+{% block canon %}{{ base }}/404.html{% endblock %}
+{% block body %}
+<div class="wrap">
+  <section class="sec first page-head">
+    <div class="shead"><h2>Not here.</h2><a href="/">Home ↗</a></div>
+    <p class="lead">That page does not exist on this site. The sport experiences live on their own subdomains, the research hub at <a class="u" href="{{ links.research }}">research.aguywithascarf.com</a>, the course at <a class="u" href="{{ links.course }}">b2b.aguywithascarf.com</a>.</p>
+  </section>
+</div>
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="herobg">
+  <picture>
+    <source media="(max-width:760px)" srcset="/img/hero-portrait-m.webp 900w, /img/hero-portrait-s.webp 540w" sizes="100vw">
+    {{ pic("hero", alt="Carlo De Marchis speaking on stage, wearing the scarf", cls="bg", sizes="100vw", eager=True) }}
+  </picture>
+  <div class="wrap">
+    <header class="hero">
+      <p class="sentence"><span class="bar">I work with
+        <span class="pick"><span id="whoTxt">{{ content.picker.tour[0][0] }}</span><select id="who" aria-label="Who I work with">
+          {% for k in content.picker.who %}<option>{{ k }}</option>{% endfor %}
+        </select></span>
+        on
+        <span class="pick"><span id="whatTxt">{{ content.picker.tour[0][1] }}</span><select id="what" aria-label="What I work on">
+          {% for k in content.picker.what %}<option>{{ k }}</option>{% endfor %}
+        </select></span></span>
+      </p>
+      <p class="answer"><span class="bar" id="answer"><b>{{ content.picker.who[content.picker.tour[0][0]] }}</b> On {{ content.picker.what[content.picker.tour[0][1]] }}.</span></p>
+      <p class="who"><span class="bar">{{ content.byline[0] }}</span><br class="lb"><span class="bar">{{ content.byline[1] }}</span></p>
+    </header>
+  </div>
+</div>
+
+<section class="feature" id="about">
+  <div class="wrap">
+    <h2>{{ content.feature.title }}</h2>
+    <p>{{ content.feature.text|safe_html }}</p>
+    <div class="strip">
+      {% for t in content.strip %}
+      <a href="{{ t.href }}">{{ pic(t.img, alt="", sizes="(max-width:860px) 50vw, 25vw", pos=t.pos) }}<h3>{{ t.title }}</h3><p>{{ t.text }}</p></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="sec first" id="stage">
+    <div class="shead"><h2>On stage and on air</h2><a href="/stage/">The full record ↗</a></div>
+    <div class="stagerow">
+      {% for p in content.stage_photos %}
+      <figure><a href="/stage/">{{ pic(p.img, alt=p.caption, sizes="(max-width:700px) 68vw, 33vw") }}</a><figcaption>{{ p.caption }}</figcaption></figure>
+      {% endfor %}
+    </div>
+    <p class="stagelead">{{ content.stage_lead }} <a href="{{ links.linkedin }}">Book a moderator ↗</a></p>
+    <details class="fold">
+      <summary><span>The record, 2025 to 2026</span><i></i></summary>
+      {% include "_record.html" %}
+    </details>
+  </section>
+
+  <section class="sec first" id="work">
+    <div class="shead"><h2>Live sport experiences</h2><a href="{{ links.dataviz }}">dataviz.aguywithascarf.com ↗</a></div>
+    <div class="stagerow work4">
+      {% for w in work_strip %}
+      <a class="tile" href="{{ w.href }}">{{ pic(w.img, alt=w.name, sizes="(max-width:700px) 68vw, 25vw") }}<figcaption><b>{{ w.name }}</b> {{ w.short }}</figcaption></a>
+      {% endfor %}
+    </div>
+    <p class="stagelead">{{ (rel.count|words)|capitalize }} live experiences built from official feeds and updated every night: {{ rel.total }} releases since {{ rel.since }}, every one dated and noted. Best in landscape on a laptop or an iPad, fine on a phone. <a href="{{ links.dataviz }}">Open the hub ↗</a></p>
+    <details class="fold">
+      <summary><span>All {{ rel.count|words }}, and the research hub</span><i></i></summary>
+      <div class="grid compact">
+        {% for w in content.work %}
+        <a class="work" href="{{ w.href }}">{{ pic(w.img, alt=w.name, sizes="(max-width:700px) 50vw, 25vw") }}<h3>{{ w.name }}{% if w.id in rel.apps %} <small>v{{ rel.apps[w.id].version }}</small>{% endif %}</h3><p>{{ w.text }}</p></a>
+        {% endfor %}
+      </div>
+    </details>
+  </section>
+
+  <section class="sec" id="services">
+    <div class="shead"><h2>Services</h2><a href="{{ links.linkedin }}">Start on LinkedIn ↗</a></div>
+    <ol class="services">
+      {% for s in content.services %}
+      <li><span class="i">{{ "%02d"|format(loop.index) }}</span><h3>{{ s.name }}</h3><p>{{ s.text|safe_html }}</p></li>
+      {% endfor %}
+    </ol>
+    <div class="avail">{% for a in content.availability %}<span>{{ a }}</span>{% endfor %}</div>
+  </section>
+
+  <section class="sec" id="bio">
+    <div class="shead"><h2>About</h2><a href="{{ links.linkedin }}">LinkedIn ↗</a></div>
+    <div class="about">
+      <div>
+        <p class="big">{{ content.about.big }}</p>
+        {% for p in content.about.paras %}<p>{{ p }}</p>{% endfor %}
+        <div class="meta">
+          {% for k, v in content.about.meta %}<b>{{ k }}</b><span>{{ v|safe_html }}</span>{% endfor %}
+        </div>
+      </div>
+      <figure>
+        {{ pic("portrait", alt="Carlo De Marchis", sizes="(max-width:860px) 100vw, 45vw") }}
+        <figcaption>{{ site.person }}.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec" id="channels">
+    <div class="shead"><h2>Every channel, every platform</h2><a href="{{ links.substack }}">Subscribe ↗</a></div>
+    <div class="channels">
+      {% for c in content.channels %}
+      <a class="ch" href="{{ links[c.href] }}"><span class="k">{{ c.k }}</span><span class="num">{{ c.n }}<small>{{ c.unit }}</small></span><h3>{{ c.title }}</h3><p>{{ c.text }}</p></a>
+      {% endfor %}
+    </div>
+  </section>
+</div>
+{% endblock %}
+{% block scripts %}
+<script id="picker-data" type="application/json">{{ content.picker|tojson }}</script>
+<script src="/site.js?v={{ built }}" defer></script>
+{% endblock %}

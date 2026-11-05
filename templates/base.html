@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}{{ site.title }}{% endblock %}</title>
+<meta name="description" content="{% block desc %}{{ site.description }}{% endblock %}">
+<link rel="canonical" href="{% block canon %}{{ base }}/{% endblock %}">
+<meta name="author" content="{{ site.person }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.site_name }}">
+<meta property="og:title" content="{{ self.title() }}">
+<meta property="og:description" content="{{ self.desc() }}">
+<meta property="og:url" content="{{ self.canon() }}">
+<meta property="og:image" content="{{ base }}/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Carlo De Marchis on stage, wearing the scarf">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ self.title() }}">
+<meta name="twitter:description" content="{{ self.desc() }}">
+<meta name="twitter:image" content="{{ base }}/og.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#111111">
+<link rel="stylesheet" href="/style.css?v={{ built }}">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Carlo De Marchis","url":"{{ base }}/","jobTitle":"Advisor in sports and media technology","address":{"@type":"PostalAddress","addressLocality":"Turin","addressCountry":"IT"},"sameAs":["{{ links.linkedin }}","{{ links.substack }}","{{ links.youtube }}"]}</script>
+<!-- Umami --><script>try{/[?&#]noumami\b/.test(location.href)&&localStorage.setItem('umami.disabled','1')}catch(e){}</script><script defer src="{{ site.umami_src }}" data-website-id="{{ site.umami_website_id }}"></script><!-- End Umami -->
+</head>
+<body class="page-{{ page }}">
+<div class="wrap">
+  <nav class="nav" aria-label="Main">
+    <a class="brand" href="/">A Guy With A Scarf <span>· {{ site.person }}</span></a>
+    <ul>
+      <li><a href="/#work">Work</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/stage/" {% if page == 'stage' %}aria-current="page"{% endif %}>Stage</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#channels">Writing</a></li>
+      <li><a href="{{ links.linkedin }}">Contact</a></li>
+    </ul>
+  </nav>
+</div>
+{% block body %}{% endblock %}
+<div class="wrap">
+  <footer>
+    <div class="foot">
+      <div><p class="big">Say hello.</p><a href="{{ links.linkedin }}">Message me on LinkedIn ↗</a></div>
+      <div><b>Work</b><a href="{{ links.dataviz }}">Sport experiences</a><br><a href="{{ links.research }}">Research hub</a><br><a href="{{ links.course }}">The course</a><br><a href="{{ links.ytft }}">Football tracker</a></div>
+      <div><b>Writing</b><a href="{{ links.linkedin_newsletter }}">Newsletter on LinkedIn</a><br><a href="{{ links.substack }}">Substack</a><br><a href="{{ links.youtube }}">Episodes on YouTube</a><br><a href="{{ links.amazon }}">The book</a></div>
+      <div><b>Elsewhere</b><a href="{{ links.art }}">art.carlodemarchis.it</a><br><a href="{{ links.tec }}">torinoecultura.it</a><br><a href="{{ links.linkedin_page }}">AGWAS on LinkedIn</a></div>
+      <p class="note">{{ content.footer_note }} Numbers as of {{ numbers.as_of }}.</p>
+    </div>
+  </footer>
+</div>
+{% block scripts %}{% endblock %}
+</body>
+</html>

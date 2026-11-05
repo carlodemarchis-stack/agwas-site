@@ -1,0 +1,18 @@
+<div class="stage">
+  <div>
+    <h3>Live, the last twelve months</h3>
+    <ul>
+      {% for s in content.stages %}
+      <li><span class="d">{{ s.date }}</span><span class="r">{{ s.role }}</span><span class="t"><b>{{ s.where }}</b> <span>{{ s.what }}</span></span></li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div>
+    <h3>On air, hosted</h3>
+    <ul class="air">
+      {% for a in content.air %}
+      <li><span class="t"><b>{{ a.name }}</b> <span>· {{ a.text }}</span></span><span class="n">{{ a.n }}<small>{{ a.unit }}</small></span></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
