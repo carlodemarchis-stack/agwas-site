@@ -70,9 +70,11 @@ def latest_posts(n=5):
     except Exception as e:  # the site must still build offline and in CI
         print(f"substack: skipped ({e}), serving {len(cached)} cached posts")
         return cached
+    if isinstance(posts, dict):           # the endpoint started wrapping the list in {"posts": [...]} on 6 Nov 2026
+        posts = posts.get("posts", [])
     out = []
     for p in posts:
-        if p.get("type") not in ("newsletter", "podcast"):
+        if not isinstance(p, dict) or p.get("type") not in ("newsletter", "podcast"):
             continue
         dt = datetime.datetime.strptime(p["post_date"][:10], "%Y-%m-%d").date()
         out.append({"title": p["title"].strip(), "url": p["canonical_url"], "date": dt.strftime("%-d %b %Y"),
