@@ -52,6 +52,24 @@ img{display:block;max-width:100%;height:auto}
 }
 @media (prefers-reduced-motion:reduce){#whoTxt,#whatTxt,.answer,.pick .ghost{transition:none}}
 
+/* the note band under the hero */
+.noteband{background:var(--paper);border-bottom:1px solid var(--line)}
+.nb{display:grid;grid-template-columns:150px minmax(0,1fr) auto;gap:22px;align-items:baseline;padding:14px 0}
+.nb-k{font-size:12.5px;color:var(--faint);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.nb-k time{color:var(--mute);text-transform:none;letter-spacing:0;font-size:13px}
+.nb-sep{margin:0 6px}
+.nb-count{color:var(--mute);text-transform:none;letter-spacing:0;font-size:13px;font-variant-numeric:tabular-nums}
+.nb-count b{font-weight:500;color:var(--ink)}
+.nb-stage{position:relative;min-width:0}
+.nb-item{display:block;font-size:15.5px;line-height:1.5;color:var(--ink);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;transition:opacity .45s ease}
+.nb-item:not(.on){position:absolute;inset:0;opacity:0;pointer-events:none}
+.nb-item .nb-time{color:var(--faint);font-variant-numeric:tabular-nums;margin-right:6px}
+.nb-item:hover{text-decoration:underline;text-decoration-color:var(--faint)}
+.nb-more{font-size:14px;color:var(--mute);white-space:nowrap}
+.nb-more:hover{color:var(--ink)}
+@media (max-width:760px){.nb{grid-template-columns:1fr auto;gap:8px 16px;padding:12px 0}.nb-stage{grid-column:1/-1}.nb-item{font-size:15px;-webkit-line-clamp:3}}
+@media (prefers-reduced-motion:reduce){.nb-item{transition:none}}
+
 /* about: dark block, text left, portrait right */
 .aboutgrid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.8fr);gap:clamp(28px,5vw,80px);align-items:start}
 .aboutgrid p+p{margin-top:14px}

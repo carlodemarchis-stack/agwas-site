@@ -55,3 +55,22 @@ document.addEventListener('click', function (e) {
   var el = document.getElementById(a.getAttribute('href').slice(1)); if (!el) return;
   var d = el.closest('details'); if (d && !d.open) d.open = true;
 });
+
+/* the note band: rotate through the day's notes, pause while hovered or focused */
+(function () {
+  var band = document.querySelector('.noteband'); if (!band) return;
+  var items = band.querySelectorAll('.nb-item'); if (items.length < 2) return;
+  var idx = band.querySelector('#nbIdx'), i = 0, timer = null;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(n) {
+    items[i].classList.remove('on'); i = (n + items.length) % items.length; items[i].classList.add('on');
+    if (idx) idx.textContent = i + 1;
+  }
+  function start() { if (reduce || timer) return; timer = setInterval(function () { show(i + 1); }, 8000); }
+  function stop() { clearInterval(timer); timer = null; }
+  band.addEventListener('mouseenter', stop); band.addEventListener('mouseleave', start);
+  band.addEventListener('focusin', stop); band.addEventListener('focusout', start);
+  band.addEventListener('touchstart', stop, { passive: true });
+  document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
+  start();
+})();

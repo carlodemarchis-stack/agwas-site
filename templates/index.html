@@ -23,6 +23,23 @@
   </div>
 </div>
 
+{% if notes %}
+{# ---------- the note band: the latest day of Substack Notes, rotating when there are several ---------- #}
+<aside class="noteband" aria-label="Latest note on Substack" data-count="{{ notes|length }}">
+  <div class="wrap">
+    <div class="nb">
+      <span class="nb-k">Note<span class="nb-sep">·</span><time datetime="{{ notes[0].iso }}">{{ notes[0].date }}</time>{% if notes|length > 1 %}<span class="nb-sep">·</span><span class="nb-count"><b id="nbIdx">1</b>/{{ notes|length }}</span>{% endif %}</span>
+      <div class="nb-stage">
+        {% for n in notes %}
+        <a class="nb-item{% if loop.first %} on{% endif %}" href="{{ n.url }}" data-i="{{ loop.index0 }}"><span class="nb-time">{{ n.time }}</span> {{ n.body|excerpt }}</a>
+        {% endfor %}
+      </div>
+      <a class="nb-more" href="{{ links.notes }}">All notes ↗</a>
+    </div>
+  </div>
+</aside>
+{% endif %}
+
 {# ---------- 1. About: one block, text left, portrait right ---------- #}
 <section class="feature" id="about">
   <div class="wrap">

@@ -88,6 +88,50 @@ def latest_posts(n=5):
     return out or cached
 
 
+# ---------------------------------------------------------------- the latest day of Substack Notes
+NOTES_CACHE = os.path.join(ROOT, "data", "notes.json")
+
+
+def latest_notes():
+    """Carlo's own Notes from the most recent day that has any, newest first, from Substack's public
+    reader feed. Cached like the posts; replies and restacks are not his notes and are skipped."""
+    cached = json.load(open(NOTES_CACHE)) if os.path.exists(NOTES_CACHE) else []
+    try:
+        feed = fetch_json(SITE["substack_notes"])
+    except Exception as e:
+        print(f"notes: skipped ({e}), serving {len(cached)} cached notes")
+        return cached
+    notes = []
+    for it in feed.get("items", []):
+        c = it.get("comment") or {}
+        if it.get("type") != "comment" or c.get("user_id") != SITE["substack_user_id"]:
+            continue
+        body = (c.get("body") or "").strip()
+        if c.get("ancestor_path") or not body or (body.startswith("http") and " " not in body):
+            continue                      # replies, empty notes, and notes that are only a link
+        when = datetime.datetime.strptime(c["date"][:19], "%Y-%m-%dT%H:%M:%S")
+        notes.append({"id": c["id"], "iso": when.date().isoformat(), "time": when.strftime("%H:%M"),
+                      "date": when.strftime("%-d %b %Y"), "body": c["body"].strip(),
+                      "url": f"https://substack.com/@aguywithascarf/note/c-{c['id']}",
+                      "images": len(c.get("attachments") or [])})
+    if not notes:
+        return cached
+    day = notes[0]["iso"]
+    out = [n for n in notes if n["iso"] == day]
+    os.makedirs(os.path.dirname(NOTES_CACHE), exist_ok=True)
+    json.dump(out, open(NOTES_CACHE, "w"), indent=1, ensure_ascii=False)
+    return out
+
+
+def note_excerpt(body, limit=230):
+    """First paragraph or so, trimmed at a word, for the band; the full note is one click away."""
+    text = " ".join(body.split())
+    if len(text) <= limit:
+        return text
+    cut = text[:limit].rsplit(" ", 1)[0].rstrip(",;:")
+    return cut + " …"
+
+
 # ---------------------------------------------------------------- images
 def load_source(path):
     im = ImageOps.exif_transpose(Image.open(path))
@@ -163,9 +207,10 @@ def main():
     env = Environment(loader=FileSystemLoader(os.path.join(ROOT, "templates")),
                       autoescape=select_autoescape(["html"]), trim_blocks=True, lstrip_blocks=True)
     env.globals.update(pic=pic, site=SITE, content=CONTENT, links=SITE["links"], numbers=SITE["numbers"],
-                       base=SITE["base_url"], rel=releases(), posts=latest_posts(), year=datetime.date.today().year,
+                       base=SITE["base_url"], rel=releases(), posts=latest_posts(), notes=latest_notes(), year=datetime.date.today().year,
                        built=datetime.date.today().isoformat())
     env.filters["safe_html"] = lambda s: Markup(s)
+    env.filters["excerpt"] = note_excerpt
     WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve"]
     env.filters["words"] = lambda n: WORDS[n] if 0 <= int(n) < len(WORDS) else str(n)
     work_by_id = {w["id"]: w for w in CONTENT["work"]}
