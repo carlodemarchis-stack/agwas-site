@@ -204,6 +204,18 @@ img{display:block;max-width:100%;height:auto}
 .ch h3{margin:30px 0 6px;font-size:19px;font-weight:500;letter-spacing:-.015em}
 .ch p{margin:0;font-size:14.5px;line-height:1.45;color:var(--mute)}
 .ch:hover h3{text-decoration:underline}
+/* the book: a double-width cell with the cover and the one button on the page */
+.ch.book{grid-column:span 2;display:grid;grid-template-columns:132px minmax(0,1fr);gap:22px;align-items:start}
+.ch.book .cover img{width:100%;height:auto;box-shadow:0 1px 0 var(--line)}
+.ch.book h3{margin:14px 0 2px}
+.ch.book .sub{color:var(--ink);font-size:14.5px;margin-bottom:8px}
+.ch.book .acts{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-top:16px}
+.ch.book .btn{display:inline-block;background:var(--ink);color:#fff;font-size:14.5px;font-weight:500;padding:10px 16px;border-radius:3px}
+.ch.book .btn:hover{background:#000}
+.ch.book .alt{font-size:14px;color:var(--mute);border-bottom:1px solid var(--line)}
+.ch.book .alt:hover{color:var(--ink);border-color:var(--ink)}
+@media (max-width:1000px){.ch.book,.ch.book:nth-child(even),.ch.book:nth-child(odd){grid-column:1/-1;padding-left:0;border-left:0}}
+@media (max-width:520px){.ch.book{grid-template-columns:96px minmax(0,1fr);gap:16px}}
 @media (max-width:1000px){.channels{grid-template-columns:1fr 1fr}.ch:nth-child(odd){padding-left:0;border-left:0}.ch:nth-child(even){padding-left:18px;border-left:1px solid var(--line)}}
 @media (max-width:520px){.channels{grid-template-columns:1fr}.ch,.ch:nth-child(even){padding-left:0;border-left:0}}
 

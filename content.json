@@ -298,7 +298,7 @@
     },
     {
       "name": "Courses and the book",
-      "text": "<b>Becoming a Better B2B Tech Vendor in Sports and Media</b>: twelve video lessons and a 200-page companion book, <i>10 Things to Consider</i>, on Amazon."
+      "text": "<b>Becoming a Better B2B Tech Vendor in Sports and Media</b>: twelve video lessons and a 200-page companion book, <i>10 Things to Consider</i>, <a class=\"u\" href=\"https://www.amazon.it/dp/B0GP66Q1ZK\">on Amazon ↗</a>."
     },
     {
       "name": "Data experiences",
@@ -421,15 +421,6 @@
       "icon": "course"
     },
     {
-      "href": "amazon",
-      "k": "Amazon",
-      "n": "200",
-      "unit": "pages",
-      "title": "10 Things to Consider",
-      "text": "Fifty-one working lists for the vendor side of sports and media technology.",
-      "icon": "amazon"
-    },
-    {
       "href": "ytft",
       "k": "App",
       "n": "100+",
@@ -437,6 +428,18 @@
       "title": "YouTube Football Tracker",
       "text": "How clubs across Europe's top five leagues perform on YouTube, tracked daily.",
       "icon": "ytft"
+    },
+    {
+      "href": "amazon",
+      "k": "The book",
+      "n": "200",
+      "unit": "pages",
+      "title": "10 Things to Consider",
+      "text": "Fifty-one working lists for the vendor side of sports and media technology, to open before a pitch, a deal or a delivery that is going sideways. 200 pages, paperback or Kindle.",
+      "icon": "amazon",
+      "book": true,
+      "sub": "Becoming a Better B2B Tech Vendor in Sports and Media",
+      "cta": "Buy on Amazon"
     }
   ],
   "footer_note": "A Guy with a Scarf is Carlo De Marchis. The sport experiences are independent, non-commercial fan projects, not affiliated with FIFA, the ATP, the WTA, Formula 1, the NFL, the NBA, the NHL, the PGA TOUR or World Athletics. Data and imagery belong to their owners.",

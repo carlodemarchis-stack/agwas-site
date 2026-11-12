@@ -146,7 +146,20 @@
     {% endif %}
     <div class="channels">
       {% for c in content.channels %}
+      {% if c.book %}
+      <div class="ch book">
+        <a class="cover" href="{{ links[c.href] }}" aria-label="{{ c.title }} on Amazon">{{ pic("book-cover", alt="The cover of " ~ c.title, sizes="150px") }}</a>
+        <div>
+          <span class="k">{{ icon(c.icon) }}{{ c.k }}</span>
+          <h3>{{ c.title }}</h3>
+          <p class="sub">{{ c.sub }}</p>
+          <p>{{ c.text }}</p>
+          <p class="acts"><a class="btn" href="{{ links[c.href] }}">{{ c.cta }} ↗</a><a class="alt" href="{{ links.course }}">or with the course</a></p>
+        </div>
+      </div>
+      {% else %}
       <a class="ch" href="{{ links[c.href] }}"><span class="k">{{ icon(c.icon) }}{{ c.k }}</span><span class="num{% if c.handle %} handle{% endif %}">{{ c.n }}{% if c.unit %}<small>{{ c.unit }}</small>{% endif %}</span><h3>{{ c.title }}</h3><p>{{ c.text }}</p></a>
+      {% endif %}
       {% endfor %}
     </div>
   </section>
