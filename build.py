@@ -107,12 +107,21 @@ def latest_notes():
         if it.get("type") != "comment" or c.get("user_id") != SITE["substack_user_id"]:
             continue
         body = (c.get("body") or "").strip()
-        if c.get("ancestor_path") or not body or (body.startswith("http") and " " not in body):
-            continue                      # replies, empty notes, and notes that are only a link
+        if c.get("ancestor_path") or not body:
+            continue                      # replies and empty notes
+        url = f"https://substack.com/@aguywithascarf/note/c-{c['id']}"
+        if body.startswith("http") and " " not in body:
+            # a note that only shares a link: keep it when it shares one of his own posts, as that post
+            shared = next((a.get("post") for a in (c.get("attachments") or []) if a.get("type") == "post" and a.get("post")), None)
+            if not shared or not shared.get("title"):
+                continue
+            url = body.split("?")[0]          # the post itself, without the share tracking
+            sub = (shared.get("subtitle") or "").strip()
+            body = "New article: " + shared["title"].strip().rstrip(".") + "." + (" " + sub if sub else "")
         when = datetime.datetime.strptime(c["date"][:19], "%Y-%m-%dT%H:%M:%S")
         notes.append({"id": c["id"], "iso": when.date().isoformat(), "time": when.strftime("%H:%M"),
-                      "date": when.strftime("%-d %b %Y"), "body": c["body"].strip(),
-                      "url": f"https://substack.com/@aguywithascarf/note/c-{c['id']}",
+                      "date": when.strftime("%-d %b %Y"), "body": body,
+                      "url": url,
                       "images": len(c.get("attachments") or [])})
     if not notes:
         return cached
