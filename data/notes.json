@@ -1,20 +1,11 @@
 [
  {
-  "id": 390544449,
-  "iso": "2026-11-18",
-  "time": "10:38",
-  "date": "18 Nov 2026",
-  "body": "New article: “There is no indication that this is due to a cyber attack”. Outages, breaches and AI: what four weeks of security notices in my own tech stack taught me about building, troubleshooting and explaining failures",
-  "url": "https://aguywithascarf.substack.com/p/there-is-no-indication-that-this",
-  "images": 1
- },
- {
-  "id": 390422555,
-  "iso": "2026-11-18",
-  "time": "05:45",
-  "date": "18 Nov 2026",
-  "body": "🛑 🛑 🛑 \"There is no indication that this is due to a cyber attack\".🛑 🛑 🛑 \n\nI now read that sentence attached to almost every outage story coming out of the United States this week, so often that I am seriously thinking of printing it on a t-shirt.\n\nMeanwhile, in the last four weeks, two platforms in my own tech stack told me the opposite. On 21 October Railway, where I run several of my apps and automations, disclosed that an attacker may have accessed customer environment variables and decrypted some of them, which is where the API keys live, and two days later they wrote to say my workspace was the kind the attacker was looking for, because it holds a lot of variables. So I rotated everything and redeployed everything, and a few days later OpenAI revoked a batch of keys as a precaution, including some of the new replacements, so I did part of it again.\n\nThen on 12 November Apify, which I use for data collection, told me someone had been inside its internal systems on 9 and 10 November and had viewed account details, billing data and 2FA settings. They rotated every API token on their side and revoked the GitHub connection, and every script and integration using the old token stopped working until I updated it. On the same day AC Milan emailed me about a cybersecurity incident involving fan data, which for a lifelong Torino supporter was not the email I expected that week.\n\nNone of my own platforms was breached, and as far as I know nothing was misused. The cost was days of very boring work, finding where each key lived, swapping it, redeploying, checking logs, and in some cases doing it twice.\n\nI have no data to tell me whether this is a pattern or just a bad month. Railway described its incident as part of a series of attacks on platform companies aimed at AI inference providers, and to me that means the keys we all paste into environment variables to make our AI projects run have become worth an attacker's effort.\n\nA few years ago everybody in our industry was a Web3 expert, then everybody became an AI expert. My bet is that cybersecurity is next, and that we will all have to learn it whether we like it or not, starting with knowing where every secret in your stack sits and how fast you can rotate it.",
-  "url": "https://substack.com/@aguywithascarf/note/c-390422555",
-  "images": 0
+  "id": 394660550,
+  "iso": "2026-11-23",
+  "time": "08:00",
+  "date": "23 Nov 2026",
+  "body": "Great to have the world of ATP tennis in our city and even without Sinner we embraced and cheered for both Carlos And Sacha\n\nATP Finals — Get the full Finals interactive experience at the url below!",
+  "url": "https://substack.com/@aguywithascarf/note/c-394660550",
+  "images": 2
  }
 ]
